@@ -1,10 +1,12 @@
 import React from 'react';
-import images from './assets/images';
+import images from "../Components/assets/images";
+import '../Styles/Home.css';
 
 const Home = () => {
     return (
         <div className='home'>
-            <section className='home_img'>
+            <section className='home1'>
+               
                 <h1 className='home_title'>Committed to the safety of your belongings.</h1>
             </section>
             <section className='home_2'>
@@ -61,14 +63,10 @@ const Home = () => {
                 </div>
             </section>
             <section className='home_4'>
-
+            <i>Empresa peruana que le ofrece soluciones en el transporte de carga y mudanza</i>
+               <h1>TRANSPORTAMOS TUS COSAS CON SEGURIDAD Y CONFIANZA</h1>
             </section>
-            <section className='home_5'>
-
-            </section>
-            <section className='home_6'>
-
-            </section>
+           
             <footer>
 
             </footer>

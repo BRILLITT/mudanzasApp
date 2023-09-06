@@ -1,5 +1,5 @@
 import { HashRouter, Routes, Route } from "react-router-dom";
-import './App.css';
+import "./Styles/App.css";
 import Admin from "./Components/Admin";
 import Customers from "./Components/Customers";
 import Main from "./Components/Main";
@@ -8,6 +8,8 @@ import Login from "./Components/Login";
 import Services from "./Components/Services";
 import ContactUs from "./Components/ContactUs";
 import Home from "./Components/Home";
+import images from "./Components/assets/images";
+import Footer from "./Components/Footer";
 
 function App() {
 
@@ -29,6 +31,7 @@ function App() {
 
 
         </Routes>
+        <Footer/>
       </HashRouter>
 
      
