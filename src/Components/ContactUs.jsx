@@ -58,9 +58,9 @@ const ContactUs = () => {
                 <h2>ENVÍANOS UN CORREO ELECTRÓNICO</h2>
                 <p>Los campos obligatorios están marcados *</p>
                     <label  htmlFor="name">Put your Name:(obligatorio) </label><br />
-                    <input className='input' type="text" placeholder={"*name"} id="name" value={name} onChange={e => setName(e.target.value)} /><br />
+                    <input className='input' required type="text" placeholder={"*name"} id="name" value={name} onChange={e => setName(e.target.value)} /><br />
                     <label htmlFor="email">Put your gmail:(obligatorio)  </label><br />
-                    <input className='input' placeholder={"*gmail"} type="gmail" value={gmail} id="email" onChange={e => setGmail(e.target.value)} /><br />
+                    <input className='input' placeholder={"*gmail"} required type="gmail" value={gmail} id="email" onChange={e => setGmail(e.target.value)} /><br />
                     <label htmlFor="asunto">Put your asunto:</label><br />
                     <input className='input' placeholder={"asunto"} type="text" value={asunto} id="asunto" onChange={e => setAsunto(e.target.value)} /><br />
                     <label htmlFor="message">Put your message:</label><br />

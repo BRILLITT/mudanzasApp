@@ -116,5 +116,7 @@ width: 400px;
     background-color: #e69f10;
     color: #ffffff;
     font-size: 15px;
-
+     
+}.input:invalid{
+    color: red;
 }

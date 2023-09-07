@@ -16,6 +16,7 @@ const Main = () => {
     return (
 
         <div>
+            
             <header className='header1'>
               <Link className="title1" to={"/"}>Home</Link><br/>
               <Link className="title" to={"/aboutus"}>About Us</Link><br/>

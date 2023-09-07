@@ -9,6 +9,9 @@ const Footer = () => {
         <div className='footer1'>
             <footer className='aboutus_footer' >
                 <div>
+                    
+                </div>
+                <div>
                     <i className=" icon fa-solid fa-van-shuttle"></i>
                     <p>Con más de 10 años de experiencia en el transporte de carga y mudanza a tiempo completo. Contamos con diversos tipos de camiones tipo furgón y con baranda de diferentes tamaños ideales para: mudanzas y transporte de carga en general. Nuestros valores son: Responsabilidad y puntualidad.</p>
                 </div>

@@ -3,7 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     margin: 0;
-
+    
 }
 
 .App {
@@ -14,6 +14,7 @@
     width: 100%;
     height: 100vh;
     margin: 0;
+    background-color: #e69f10;
 }
 
 .header1 {
@@ -27,8 +28,13 @@
     padding: 0;
     border-bottom: solid white;
     width: 100%;
+    
+    
+    z-index: 1000px;
     height: 100px;
-}.header1 >button{
+}
+
+.header1 >button{
     text-decoration: none;
     padding: 15px;  
     width: 100px;
@@ -36,6 +42,7 @@
     background-color: #e69f10;
     color: #ffffff;
     font-size: 15px;
+    scale: (0);
 }
 
 .title {
@@ -55,11 +62,17 @@
     color: #ffffff;
     font-size: 15px;
 
+}.title1:hover{
+    transform: scale(1.1);
 }
 
 .title:hover {
     border-bottom: solid 5px #e69f10;
-
+    
+}.title:hover{
+    transform: scale(1.1);
+}button:hover{
+    transform: scale(1.1);
 }
 
 

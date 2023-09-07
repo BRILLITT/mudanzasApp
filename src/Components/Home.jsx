@@ -5,6 +5,7 @@ import '../Styles/Home.css';
 const Home = () => {
     return (
         <div className='home'>
+            
             <section className='home1'>
                
                 <h1 className='home_title'>Committed to the safety of your belongings.</h1>
@@ -14,7 +15,10 @@ const Home = () => {
                 <div className='cards'>
                     <div className='home2_card1'>
                         <img className="home2_card1_img" src={images.carga} alt="" />
+                        
                         <div className='home2_card2_img'></div>
+                        
+                        
                         <div className='home2_card2_content1'>
                             <i className="fa-solid fa-box-archive  icon_card"></i>
                             <p className='home2_card1_title1'> MUDANZAS</p>
@@ -24,7 +28,7 @@ const Home = () => {
                         </div>
                     </div>
                     <div className='home2_card2'>
-
+                       
                         <img className="home2_card1_img1" src={images.transporte} alt="" />
                         <div className='home2_card2_content2'>
                             <i className="fa-solid fa-van-shuttle icon_card"></i>

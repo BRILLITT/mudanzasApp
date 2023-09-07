@@ -1,7 +1,7 @@
 .login{
     background-color:#000000;
     position: absolute;
-    
+    z-index: 2000px;
     top:7%;
    right: 0;
     padding: 0;
@@ -32,6 +32,8 @@ color:aliceblue;
    width: 300px;
     font-size: 12px;
     
+}.input:invalid{
+    color: red;;
 }
 
 .eye>.icon{
@@ -45,6 +47,7 @@ color:aliceblue;
     text-align: center;
     
 }.eye2{
+   
     text-decoration: none;
     background-color: #e69f10;
     width: 200px;

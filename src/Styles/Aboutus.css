@@ -4,6 +4,8 @@
     width: 100%;
     box-sizing: border-box;
     background-color: rgb(0, 0, 0);
+    position: relative;
+    z-index: 10px;
 }.aboutus_1{
     background-image: url("../Components/assets/about1.jpg");
     background-repeat:no-repeat;

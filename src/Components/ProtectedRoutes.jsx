@@ -1,14 +1,20 @@
 
 import { Navigate, Outlet } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import Login from './Login';
+
 const ProtectedRoutes = () => {
 
 		// Aquí va la condición. Puede ser una condición de cualquier tipo. Lo que 
 		// Importa es que valide si el usuario está loggeado o no
-    if(true){
+
+        const credencial = useSelector(state=> state.dataSlice);
+
+    if(credencial.gmail==='administrador' && credencial.password==='1234'){
         return <Outlet />
     } else { 
-        return <Navigate to='/login' />
+        alert('credenciales incorrectas');
+        return <Navigate to='/create' />
     }   
     
   
