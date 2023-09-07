@@ -1,0 +1,62 @@
+.Create{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 800px;
+    background-color: #e69f10;
+}.Create > section{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: black;
+    width: 400px;
+    height: 500px;
+    color: aliceblue;
+}.Create section>form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 20px;
+    padding: 20px;
+   
+}.Create section form > input {
+width: 300px;
+height: 40px;
+margin: 20px;
+
+}.icon1{
+    border-radius: 50%;
+    font-size: 30px;
+    background-color:rgb(255, 255, 255);
+    color: blue;
+    margin-right: 10px;
+}.icon2{
+    border-radius: 50%;
+    font-size: 30px;
+    background-color:rgb(255, 255, 255);
+    color: rgb(255, 0, 0);
+    margin-right: 10px;
+}.icon3{
+    text-align: center;
+    padding: 5px;
+    border-radius: 50%;
+    font-size: 30px;
+    background-color:rgb(255, 255, 255);
+    color: rgb(234, 0, 255);
+    margin-right: 10px;
+    width: 40px;
+}.icon4{
+    text-align: center;
+    padding: 5px;
+    border-radius: 50%;
+    font-size: 30px;
+    background-color:rgb(255, 255, 255);
+    color: rgb(255, 0, 0);
+    margin-right: 10px;
+    width: 40px;
+}

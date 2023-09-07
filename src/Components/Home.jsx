@@ -16,7 +16,7 @@ const Home = () => {
                         <img className="home2_card1_img" src={images.carga} alt="" />
                         <div className='home2_card2_img'></div>
                         <div className='home2_card2_content1'>
-                            <i class="fa-solid fa-box-archive  icon_card"></i>
+                            <i className="fa-solid fa-box-archive  icon_card"></i>
                             <p className='home2_card1_title1'> MUDANZAS</p>
                             <p>
                                 Servicio de Mudanza en casas, oficinas y departamentos. Contamos con camiones tipo furgónde distinta capacidad y en distintos tamaños. Hacemos mudanzas en todo lima y provincia.</p>
@@ -27,7 +27,7 @@ const Home = () => {
 
                         <img className="home2_card1_img1" src={images.transporte} alt="" />
                         <div className='home2_card2_content2'>
-                            <i class="fa-solid fa-van-shuttle icon_card"></i>
+                            <i className="fa-solid fa-van-shuttle icon_card"></i>
                             <p className='home2_card1_title2'>
                                 TRANSPORTE DE CARGA</p>
                             <p>
@@ -38,7 +38,7 @@ const Home = () => {
                         <img className="home2_card1_img2" src={images.embalaje} alt="" />
                         <div className='home2_card2_content3'>
 
-                            <i class="fa-solid fa-tape  icon_card"></i>
+                            <i className="fa-solid fa-tape  icon_card"></i>
                             <p className='home2_card1_title3'>
                                 SERVICIO DE EMBALAJE</p>
                             <p>
@@ -55,10 +55,10 @@ const Home = () => {
                     </div>
                 
                 <div className='home_3_content_text'>
-                 <p><i class="fa-solid fa-quote-left icon"></i>
+                 <p><i className="fa-solid fa-quote-left icon"></i>
                         Contrate sus servicios de mudanza y me brindaron un buen servicio a un precio accesible”.<br/> <span>Lidia Medina</span></p>
-                        <p><i class="fa-solid fa-quote-left icon"></i> Trasladaron los materiales de construcción para la construcción de mi taller y lo hicieron rápido y sin contratiempos” <br/> <span>Martín Vizcarra</span></p>
-                        <p><i class="fa-solid fa-quote-left icon"></i> Los chicos tuvieron cuidado con mis cosas y fueron amables en especial el sr Eduardo, buen servicio ”. <br/> <span>Jorge Salas</span></p>
+                        <p><i className="fa-solid fa-quote-left icon"></i> Trasladaron los materiales de construcción para la construcción de mi taller y lo hicieron rápido y sin contratiempos” <br/> <span>Martín Vizcarra</span></p>
+                        <p><i className="fa-solid fa-quote-left icon"></i> Los chicos tuvieron cuidado con mis cosas y fueron amables en especial el sr Eduardo, buen servicio ”. <br/> <span>Jorge Salas</span></p>
                 </div>
                 </div>
             </section>

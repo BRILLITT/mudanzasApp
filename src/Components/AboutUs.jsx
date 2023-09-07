@@ -12,10 +12,10 @@ const AboutUs = () => {
                 </div>
             </section>
             <section className='aboutus_2'>
-            <iframe width="800" height="500" src="https://www.youtube.com/embed/_ccBfDgGTRk" title="Mudanzas Internacionales" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe width="800" height="500" src="https://www.youtube.com/embed/_ccBfDgGTRk" title="Mudanzas Internacionales"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 <div className='aboutus2_content'>
                     <h1>Transport Always on Time</h1>
-                    <p><i class="fa-solid fa-quote-left icon" ></i>Contamos con amplia experiencia en el transporte de carga y mudanza a tiempo completo y ponemos a su disposición camiones tipo furgón y con baranda de diferentes tamaños ideales para: Mudanzas y transporte de carga en general. Nuestros valores son: Responsabilidad y resolución de problemas.
+                    <p><i className="fa-solid fa-quote-left icon" ></i>Contamos con amplia experiencia en el transporte de carga y mudanza a tiempo completo y ponemos a su disposición camiones tipo furgón y con baranda de diferentes tamaños ideales para: Mudanzas y transporte de carga en general. Nuestros valores son: Responsabilidad y resolución de problemas.
                     </p>
                 </div>
             </section>

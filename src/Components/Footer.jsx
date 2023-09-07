@@ -15,7 +15,7 @@ const Footer = () => {
           
                 <div>
                     <h1>VISITA NUESTRO CANAL</h1><br/>
-                    <iframe width="400" height="315" src="https://www.youtube.com/embed/0o1iRla5ff8" title="TOSCANOS | EMPRESA QUE OFRECE SERVICIOS DE MUDANZAS EN LIMA | 50 IDEAS DE NEGOCIOS RENTABLES EN PERÚ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <iframe width="400" height="315" src="https://www.youtube.com/embed/0o1iRla5ff8" title="TOSCANOS | EMPRESA QUE OFRECE SERVICIOS DE MUDANZAS EN LIMA | 50 IDEAS DE NEGOCIOS RENTABLES EN PERÚ"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
                 </div>
                 <div >
                    

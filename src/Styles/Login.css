@@ -1,0 +1,63 @@
+.login{
+    background-color:#000000;
+    position: absolute;
+    
+    top:7%;
+   right: 0;
+    padding: 0;
+    width: 19%;
+    height: 400px;
+
+}.login .login1> form{
+display: flex;
+font-size: 15px;
+flex-direction: column;
+align-items: center;
+justify-content: space-around;
+color:aliceblue;
+
+}form > div{
+    display: flex;
+    flex-direction:row;
+    text-align: left;
+    align-items:center;
+    justify-content: space-around;
+    
+ 
+}
+
+
+.input{
+    padding: 10px;
+   width: 300px;
+    font-size: 12px;
+    
+}
+
+.eye>.icon{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    background-color: #e69f10;
+    color: rgb(0, 0, 0);
+    font-size: 25px;
+    height: 33px;
+    text-align: center;
+    
+}.eye2{
+    text-decoration: none;
+    background-color: #e69f10;
+    width: 200px;
+    padding: 10px;
+    color:aliceblue;
+    cursor: pointer;
+}.create{
+    text-decoration: none;
+    background-color: #e69f10;
+    width: 200px;
+    padding: 10px;
+    color:aliceblue;
+    cursor: pointer;
+}.email1{
+    width: 330px; 
+}
