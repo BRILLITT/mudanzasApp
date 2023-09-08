@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {useNavigate,Link} from "react-router-dom";
 import "../Styles/App.css";
 import Login from './Login';
@@ -6,9 +6,21 @@ import { useSelector } from 'react-redux';
 import Tools from './Tools';
 const Main = () => {
     const[look,setLook]=useState(false);
-    const[saw,setSaw]=useState(true);
+    const[saw,setSaw]=useState(false);
     const navigate=useNavigate();
     const constLogin=useSelector(state=>state.dataSlice);
+
+    useEffect(()=>{
+        if(!constLogin.name) {
+            setLook(false);
+        } else {
+            setLook(true);
+        }  
+        
+    },[constLogin]);
+
+
+
     const back=()=>{
      
         navigate(-1);
@@ -35,7 +47,7 @@ console.log(saw);
               {constLogin.name ?<></>:<h1>{look?<Login/>:<></>}</h1>}
              
               {constLogin.name ?<div className='header_datos'>
-                <button onClick={made}><img src={constLogin.imageUrl} alt="" /></button>
+                <button className='button' onClick={made}><img className='' src={constLogin.imageUrl} alt="" /></button>
               <br/><h2>Hi {constLogin.name.slice(0,constLogin.name.indexOf(" "))}</h2></div>: <button onClick={see}>Login</button>}
               
               {constLogin.name?<div>{saw?<Tools/>:<></>}</div>:<></>}

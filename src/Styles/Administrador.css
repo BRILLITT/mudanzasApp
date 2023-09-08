@@ -72,4 +72,8 @@ justify-content:space-evenly;
 flex-direction:row;
 
 
+}.panel1> h1{
+    margin:0;
+    position: relative;
+    left:70px;
 }

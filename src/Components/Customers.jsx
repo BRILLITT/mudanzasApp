@@ -35,10 +35,11 @@ const Customers = () => {
             <section className='panel1'>
                 <div className='profile'>
                     {(usuario.imageUrl) ? <img className="imguser" src={usuario.imageUrl} alt="" /> : <img className="imguser" src={images.incognito} alt="" />}
-                    <h1>{usuario.name ? `Welcome ${usuario.name}` : 'Welcome!, you must first log in'}</h1>
+                    <h1>{usuario.name ? `Welcome ${usuario.name.slice(0,(usuario.name.indexOf(" ")))}` : 'Welcome!, you must first log in'}</h1> <button className="logout" onClick={deleteData}><i className="icon fa-solid fa-arrow-right-from-bracket"></i></button>
+                    
                     <br /> <br />
                    
-                  <button className="logout" onClick={deleteData}><i className="icon fa-solid fa-arrow-right-from-bracket"></i></button>
+                 
 
                 </div>
                 <Link className="lin1" to={"/customer"}>Mis pedidos</Link>

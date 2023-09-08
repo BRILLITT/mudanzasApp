@@ -1,23 +1,45 @@
 .Tools{
     display: flex;
-    align-items: center;
-    justify-content:space-around;
+   
+
     flex-direction: column;
-    background-color:#000000;
+   
     position: absolute;
     z-index: 2000px;
-    top:8%;
-    right: 10%;
+    top:10%;
+    right: 10.1%;
     padding-bottom: 40px;
     width: 19%;
-    height: 400px;
+    height: 50px;
+   
 
 }.Tools>button{
+    width: 100px;
+   text-align: center;
     text-decoration: none;
     background-color:#e69f10 ;
     padding: 10px;
     color:aliceblue;
-}.Tools button >Link{
+}.Tools>.my{
+    width: 100px;
+   text-align: center;
+    text-decoration: none;
+    color:white;
+    background-color:#e69f10 ;
+    padding: 10px;
+    color:aliceblue;
+}.Tools>.log{
+    width: 100px;
+   text-align: center;
+    text-decoration: none;
+    background-color:#990c0c ;
+    padding: 10px;
+    color:aliceblue;
+}
+
+
+.Tools button >Link{
+   
     text-decoration: none;
     background-color:#e69f10 ;
     padding: 10px;
