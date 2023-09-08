@@ -1,7 +1,6 @@
 
 import { Navigate, Outlet } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import Login from './Login';
 
 const ProtectedRoutes = () => {
 
@@ -10,7 +9,7 @@ const ProtectedRoutes = () => {
 
         const credencial = useSelector(state=> state.dataSlice);
 
-    if(credencial.gmail==='administrador' && credencial.password==='1234'){
+    if((credencial.gmail==='administrador' && credencial.password==='1234')){
         return <Outlet />
     } else { 
         alert('credenciales incorrectas');

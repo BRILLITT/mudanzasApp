@@ -1,31 +1,48 @@
-import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import "../Styles/Login.css";
 import { useDispatch } from 'react-redux';
 import { changeInfo } from '../store/slices/data.slice';
+import { gapi } from 'gapi-script';
+import GoogleLogin from 'react-google-login';
 
 
 const Login = () => {
+
+    const clientID = "205032911193-jhoc7egj4ine2os85j320l8u5ss4cfhg.apps.googleusercontent.com";
+
+    useEffect(()=>{
+        const start=()=>{
+            gapi.auth2.init({
+                clientId: clientID,
+            })
+        }
+        gapi.load("client:auth2", start)
+    },[])
+
+    const onSuccess = (response)=>{
+        console.log(response.profileObj);
+        setUser(response.profileObj);    
+        dispatch(changeInfo(response.profileObj));
+        navigate('/customers')
+    }
+
+    const onFailure = ()=>{
+        console.log("algo salio mal")
+    }
+
+
+    // USAR LOS DATOS DEL USUARIO
+    const [user, setUser] = useState({});
+
+
+
 
     const [gmail, setGmail] = useState("");
     const [password, setPassword] = useState("")
     const [show, setShow] = useState(false);
 
-    // const submit=(e)=>{
-    //     console.log("hola")
-    //     e.preventDefault();
-    //     const users={
-    //         id:Date.now(),
-    //         gmail:gmail,
-    //         password:password,
-    //     }
-    //     console.log(users);
-    // setUser(users);
-    // }
-
-
-
+ 
     const showyou = () => {
         setShow(!show);
     }
@@ -59,8 +76,13 @@ const Login = () => {
                     <button className='eye2'>Sign in</button><br />
                     <Link to={"/create"}><button className='create'>Create Acount</button></Link>
                 </form>
-
             </section>
+            <GoogleLogin
+            clientId={clientID}
+            onSuccess = {onSuccess}
+            onFailure={onFailure}
+            cookiePolicy={"single_host_policy"}
+            />
         </div>
 
     );

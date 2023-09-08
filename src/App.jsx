@@ -22,9 +22,9 @@ function App() {
           <Route path="/services" element={<Services />} />
           <Route path="/contactus" element={<ContactUs />} />
           <Route path="/create" element={<Create />}></Route>
+          <Route path="/customers" element={<Customers />} /> 
           <Route element={<ProtectedRoutes />}>
             <Route path="/admin" element={<Admin />} />
-            <Route path="/customers" element={<Customers />} />
           </Route>
         </Routes>
         <Footer />
@@ -34,4 +34,3 @@ function App() {
 }
 
 export default App;
-
