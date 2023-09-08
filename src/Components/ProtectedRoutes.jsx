@@ -13,7 +13,7 @@ const ProtectedRoutes = () => {
         return <Outlet />
     } else { 
         alert('credenciales incorrectas');
-        return <Navigate to='/create' />
+        return <Navigate to='/create'/>
     }   
     
   

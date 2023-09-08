@@ -8,10 +8,13 @@ export const dataSlice = createSlice({
         changeInfo:(state,action)=>{
             const data = action.payload;
             return data;
+        },logout:(state) => {        
+            return {};
         }
+
     }
 })
 
-export const { changeInfo } = dataSlice.actions;
+export const { changeInfo, logout } = dataSlice.actions;
 
 export default dataSlice.reducer;

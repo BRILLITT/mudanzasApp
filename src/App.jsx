@@ -10,8 +10,12 @@ import Home from "./Components/Home";
 import Footer from "./Components/Footer";
 import Create from "./Components/Create";
 import ProtectedRoutes from "./Components/ProtectedRoutes";
+import { useSelector } from "react-redux";
 
 function App() {
+
+  const userData = useSelector(state => state.dataSlice)
+  
   return (
     <div className="App">
       <HashRouter>
@@ -27,7 +31,9 @@ function App() {
             <Route path="/admin" element={<Admin />} />
           </Route>
         </Routes>
-        <Footer />
+      
+      {userData.name? <></>:<Footer />} 
+     
       </HashRouter>
     </div>
   );

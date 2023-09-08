@@ -49,7 +49,7 @@ const ContactUs = () => {
 
             </section>
             <section className='Contactus_3' >
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7804.000280533851!2d-77.00119597824411!3d-12.043510890849717!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c7c7e4aa0e3b%3A0xf7584c48cc3137ac!2sMobiliaria%20art%20%26%20decort!5e0!3m2!1ses-419!2spe!4v1694007710238!5m2!1ses-419!2spe" width="100%" height="800" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7804.000280533851!2d-77.00119597824411!3d-12.043510890849717!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c7c7e4aa0e3b%3A0xf7584c48cc3137ac!2sMobiliaria%20art%20%26%20decort!5e0!3m2!1ses-419!2spe!4v1694007710238!5m2!1ses-419!2spe" width="100%" height="800" ></iframe>
             </section>
             <section className='Contactus_4' >
                 

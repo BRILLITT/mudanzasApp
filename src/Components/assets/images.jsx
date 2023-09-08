@@ -10,6 +10,11 @@ import servi4 from '../assets/servi4.jpg';
 import se2 from '../assets/se2.jpg';
 import se3 from '../assets/se3.jpg';
 import se1 from '../assets/se1.jpg';
+import admin1 from '../assets/admin1.jpg';
+import admin2 from '../assets/admin2.jpg';
+import admin3 from '../assets/admin3.jpg';
+import admin4 from '../assets/admin4.jpg';
+import incognito from '../assets/incognito.png';
 export default {
     "carga": Carga,
     "embalaje": embalaje,
@@ -23,4 +28,9 @@ export default {
     "servi2":servi2,
     "servi3":servi3,
     "servi4":servi4,
+    "admin1":admin1,
+    "admin2":admin2,
+    "admin3":admin3,
+    "admin4":admin4,
+    "incognito":incognito,
 }

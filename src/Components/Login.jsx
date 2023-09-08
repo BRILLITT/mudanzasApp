@@ -48,9 +48,9 @@ const Login = () => {
     }
 
 
-    // despachamos pa la store
+    // permite invocar funciones del slice 
     const dispatch = useDispatch();
-
+    // estamos creando una funcion que esta usando la variable anterior 
     const dispatchData = () => {
         dispatch(changeInfo({gmail:gmail,password:password}));
         navigate('/Admin')
@@ -63,7 +63,9 @@ const Login = () => {
 
     return (
         <div className='login'>
-            <section className='login1' >
+
+            
+            <section className='login1_login' >
                 <form onSubmit={dispatchData}>
                     <br /><br />
                     <label htmlFor="gmail" />Enter your Email<label /><br />
@@ -71,18 +73,21 @@ const Login = () => {
                     <label htmlFor="password">Enter your password</label><br />
                     <div>
                         <input required placeholder="password" className="input" type={show ? "text" : "password"} id="password" value={password} onChange={e => setPassword(e.target.value)} />
-                        <button type='button' className='eye' onClick={showyou}>{show ? <i className="fa-solid icon fa-eye-slash"></i> : <i className="fa-solid icon fa-eye"></i>}</button><br />
+                        <button type='button' className='eye' onClick={showyou}>{show ? <i className="fa-solid icon fa-eye-slash"></i> : <i className="fa-solid icon fa-eye"></i>}</button>
                     </div><br />
-                    <button className='eye2'>Sign in</button><br />
+                    <div className='button_login'>
+                    <p><button >Sign in</button></p>
                     <Link to={"/create"}><button className='create'>Create Acount</button></Link>
+                   </div>
                 </form>
-            </section>
-            <GoogleLogin
+           
+            <GoogleLogin className='google'
             clientId={clientID}
             onSuccess = {onSuccess}
             onFailure={onFailure}
             cookiePolicy={"single_host_policy"}
             />
+             </section>
         </div>
 
     );

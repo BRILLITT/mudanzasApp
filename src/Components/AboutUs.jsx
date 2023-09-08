@@ -25,10 +25,10 @@ const AboutUs = () => {
                     <p>Nuestros pilares<br/>
                     <h1>MISIÓN, VISIÓN E HISTORIA</h1>
                     </p>
-                     <p><span>Visión:</span><br/><i class="fa-solid fa-quote-left icon" ></i> Ser una empresa de transporte de carga y mudanza reconocido en la capital por su eficiencia y fácil acceso que brinda un servicio de calidad.
-                     <br/><span>Misión:</span><br/><i class="fa-solid fa-quote-left icon" ></i> Brindar un servicio de carga eficiente y ser la solución para las personas y empresas que busquen transportar sus bienes.
+                     <p><span>Visión:</span><br/><i className="fa-solid fa-quote-left icon" ></i> Ser una empresa de transporte de carga y mudanza reconocido en la capital por su eficiencia y fácil acceso que brinda un servicio de calidad.
+                     <br/><span>Misión:</span><br/><i className="fa-solid fa-quote-left icon" ></i> Brindar un servicio de carga eficiente y ser la solución para las personas y empresas que busquen transportar sus bienes.
                     <br/>
-                    <span>Historia:</span><br/><i class="fa-solid fa-quote-left icon" ></i> Empresa peruana con 10 años en el mercado comenzó sus operaciones en el 2010 con 3 camiones brindando servicio de carga a microempresarios. En el 2013 adquirieron 3 camiones tipo furgón para brindar el servicio de mudanzas. En la actualidad MovilPack cuenta con más de 20 unidades móviles con una capacidad de carga diaria de hasta 120 toneladas. La responsabilidad y el buen servicio son hasta el día de hoy nuestros principales pilares.
+                    <span>Historia:</span><br/><i className="fa-solid fa-quote-left icon" ></i> Empresa peruana con 10 años en el mercado comenzó sus operaciones en el 2010 con 3 camiones brindando servicio de carga a microempresarios. En el 2013 adquirieron 3 camiones tipo furgón para brindar el servicio de mudanzas. En la actualidad MovilPack cuenta con más de 20 unidades móviles con una capacidad de carga diaria de hasta 120 toneladas. La responsabilidad y el buen servicio son hasta el día de hoy nuestros principales pilares.
                     </p>
 
                 </div>

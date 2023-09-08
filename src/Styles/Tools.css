@@ -1,0 +1,25 @@
+.Tools{
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+    flex-direction: column;
+    background-color:#000000;
+    position: absolute;
+    z-index: 2000px;
+    top:8%;
+    right: 10%;
+    padding-bottom: 40px;
+    width: 19%;
+    height: 400px;
+
+}.Tools>button{
+    text-decoration: none;
+    background-color:#e69f10 ;
+    padding: 10px;
+    color:aliceblue;
+}.Tools button >Link{
+    text-decoration: none;
+    background-color:#e69f10 ;
+    padding: 10px;
+    color:aliceblue;
+}

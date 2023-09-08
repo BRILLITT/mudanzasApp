@@ -26,12 +26,12 @@
     background-color: black;
     font-family: 'Open Sans', sans-serif;
     padding: 0;
-    border-bottom: solid white;
+   
     width: 100%;
     
     
     z-index: 1000px;
-    height: 100px;
+    height: 110px;
 }
 
 .header1 >button{
@@ -73,6 +73,18 @@
     transform: scale(1.1);
 }button:hover{
     transform: scale(1.1);
+}.header_datos{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+    color: #ffffff;
+}.header_datos>img{
+    margin-right: 10px;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+
 }
 
 
