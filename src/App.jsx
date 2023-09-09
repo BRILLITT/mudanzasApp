@@ -15,7 +15,6 @@ import { useSelector } from "react-redux";
 function App() {
 
   const userData = useSelector(state => state.dataSlice)
-  const userRegisterData = useSelector(state => state.userRegisterSlice)
   
   return (
     <div className="App">
@@ -27,7 +26,7 @@ function App() {
           <Route path="/services" element={<Services />} />
           <Route path="/contactus" element={<ContactUs />} />
           <Route path="/create" element={<Create />}></Route>
-          <Route path="/customers" element={(userData.name || userRegisterData.name )? <Customers />:<Navigate to='/'/>} /> 
+          <Route path="/customers" element={(userData.name)? <Customers />:<Navigate to='/'/>} /> 
           <Route element={<ProtectedRoutes />}>
             <Route path="/admin" element={<Admin />} />
           </Route>

@@ -1,0 +1,50 @@
+[   
+    {
+        "gmail":"admin",
+        "password":"123"
+    },
+    {
+      "gmail":"administrador",
+      "password":"1234"
+    },
+    {
+      "gmail": "usuario1@example.com",
+      "password": "password123"
+    },
+    {
+      "gmail": "usuario2@example.com",
+      "password": "abcde456"
+    },
+    {
+      "gmail": "usuario3@example.com",
+      "password": "p4ssw0rd"
+    },
+    {
+      "gmail": "usuario4@example.com",
+      "password": "rAnDom789"
+    },
+    {
+      "gmail": "usuario5@example.com",
+      "password": "securePass1"
+    },
+    {
+      "gmail": "usuario6@example.com",
+      "password": "myP@ssw0rd"
+    },
+    {
+      "gmail": "usuario7@example.com",
+      "password": "qwerty123"
+    },
+    {
+      "gmail": "usuario8@example.com",
+      "password": "passw0rd!"
+    },
+    {
+      "gmail": "usuario9@example.com",
+      "password": "12345678"
+    },
+    {
+      "gmail": "usuario10@example.com",
+      "password": "examplePass"
+    }
+  ]

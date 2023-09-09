@@ -4,6 +4,7 @@ import "../Styles/Create.css";
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { changeCredentials } from '../store/slices/userRegister.slice';
+import { changeInfo } from '../store/slices/data.slice';
 
 const Create = () => {
     const [name, setName] = useState("");
@@ -21,6 +22,7 @@ const Create = () => {
 
     const dispatchRegister = () => {
         dispatch(changeCredentials({ name:name,gmail: gmail, password: password }));
+        dispatch(changeInfo({ name:name,gmail: gmail, password: password }));
         alert(`Hola ${name} tu Registro a sido un registro exitoso`);
         alert('redirigiendo a la sección de clientes')
         navigate('/customers')

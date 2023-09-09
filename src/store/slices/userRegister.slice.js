@@ -8,10 +8,13 @@ export const userRegisterSlice = createSlice({
         changeCredentials:(state,action)=>{
             const data = action.payload;
             return data;
-        }
+        },
+        // logOutCredentials:(state)=>{        
+        //     return {};
+        // }
     }
 })
 
-export const { changeCredentials } = userRegisterSlice.actions;
+export const { changeCredentials, logOutCredentials } = userRegisterSlice.actions;
 
 export default userRegisterSlice.reducer;
