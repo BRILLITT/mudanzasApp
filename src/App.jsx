@@ -1,4 +1,4 @@
-import { HashRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route, Navigate } from "react-router-dom";
 import "./Styles/App.css";
 import Admin from "./Components/Admin";
 import Customers from "./Components/Customers";
@@ -15,6 +15,7 @@ import { useSelector } from "react-redux";
 function App() {
 
   const userData = useSelector(state => state.dataSlice)
+  const userRegisterData = useSelector(state => state.userRegisterSlice)
   
   return (
     <div className="App">
@@ -26,7 +27,7 @@ function App() {
           <Route path="/services" element={<Services />} />
           <Route path="/contactus" element={<ContactUs />} />
           <Route path="/create" element={<Create />}></Route>
-          <Route path="/customers" element={<Customers />} /> 
+          <Route path="/customers" element={(userData.name || userRegisterData.name )? <Customers />:<Navigate to='/'/>} /> 
           <Route element={<ProtectedRoutes />}>
             <Route path="/admin" element={<Admin />} />
           </Route>

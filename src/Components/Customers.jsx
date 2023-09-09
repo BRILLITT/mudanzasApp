@@ -8,16 +8,12 @@ import { logout } from '../store/slices/data.slice';
 const Customers = () => {
 
     const usuario = useSelector(state => state.dataSlice)
+
+    const userRegistered = useSelector(state => state.userRegisterSlice)
+
+
     const navigate = useNavigate();
  
-   
-    // const dispatch = useDispatch();
-
-    // const dispatchData = () => {
-    //     dispatch(changeInfo({gmail:gmail,password:password}));
-    //     navigate('/Admin')
-    // }
-
 
     const dispatch = useDispatch();
 
@@ -35,7 +31,7 @@ const Customers = () => {
             <section className='panel1'>
                 <div className='profile'>
                     {(usuario.imageUrl) ? <img className="imguser" src={usuario.imageUrl} alt="" /> : <img className="imguser" src={images.incognito} alt="" />}
-                    <h1>{usuario.name ? `Welcome ${usuario.name.slice(0,(usuario.name.indexOf(" ")))}` : 'Welcome!, you must first log in'}</h1> <button className="logout" onClick={deleteData}><i className="icon fa-solid fa-arrow-right-from-bracket"></i></button>
+                    <h1>{usuario.name ? `Welcome ${usuario.name.slice(0,(usuario.name.indexOf(" ")))}` : `Welcome ${userRegistered.name.slice(0,(userRegistered.name.indexOf(" ")))}`}</h1> <button className="logout" onClick={deleteData}><i className="icon fa-solid fa-arrow-right-from-bracket"></i></button>
                     
                     <br /> <br />
                    

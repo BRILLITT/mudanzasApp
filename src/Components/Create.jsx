@@ -1,24 +1,40 @@
 
-import { Link } from 'react-router-dom';
+import { Link,useNavigate } from 'react-router-dom';
 import "../Styles/Create.css";
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { changeCredentials } from '../store/slices/userRegister.slice';
+
 const Create = () => {
     const [name, setName] = useState("");
     const [gmail, setGmail] = useState("");
     const [password, setPassword] = useState("");
 
-    const submit = () => {
+    // const submit = () => {
+    //     alert(`Hola ${name} tu Registro a sido un registro exitoso`);
+    // }
+
+
+    const navigate = useNavigate();
+
+    const dispatch = useDispatch();
+
+    const dispatchRegister = () => {
+        dispatch(changeCredentials({ name:name,gmail: gmail, password: password }));
         alert(`Hola ${name} tu Registro a sido un registro exitoso`);
+        alert('redirigiendo a la sección de clientes')
+        navigate('/customers')
+        
     }
 
     return (
         <div className='Create'>
             <section>
-                <form onSubmit={submit}>
+                <form onSubmit={dispatchRegister}>
                     <label htmlFor="name">Put your Name</label>
                     <input required placeholder=" Name" id="name" value={name} type="text" onChange={e => setName(e.target.value)} />
                     <label htmlFor="gmail">Put your Email</label>
-                    <input required placeholder="email" id="gmail" value={gmail} type="gmail" onChange={e => setGmail(e.target.value)} />
+                    <input required placeholder="email" id="gmail" value={gmail} type="text" onChange={e => setGmail(e.target.value)} />
                     <label htmlFor="password">Put your Name</label>
                     <input required placeholder="Password" id="password" value={password} type="password" onChange={e => setPassword(e.target.value)} />
                  <button >Create Acount</button>
