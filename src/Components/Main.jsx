@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import  { useEffect, useState } from 'react';
 import {useNavigate,Link} from "react-router-dom";
 import "../Styles/App.css";
 import Login from './Login';
 import { useSelector } from 'react-redux';
 import Tools from './Tools';
+import images from './assets/images';
 const Main = () => {
     const[look,setLook]=useState(false);
     const[saw,setSaw]=useState(false);
@@ -47,7 +48,7 @@ console.log(saw);
               {constLogin.name ?<></>:<h1>{look?<Login/>:<></>}</h1>}
              
               {constLogin.name ?<div className='header_datos'>
-                <button className='button' onClick={made}><img className='' src={constLogin.imageUrl} alt="" /></button>
+                <button className='button' onClick={made}><img className='miniImage' src={constLogin.imageUrl? constLogin.imageUrl: images.incognito} alt="" /></button>
               <br/><h2>Hi {constLogin.name.slice(0,constLogin.name.indexOf(" "))}</h2></div>: <button onClick={see}>Login</button>}
               
               {constLogin.name?<div>{saw?<Tools/>:<></>}</div>:<></>}

@@ -94,5 +94,8 @@
     text-decoration: none;
     border-radius: 50%;
 }
+.miniImage{
 
-
+    width: 80px;
+    height: 80px;
+}
