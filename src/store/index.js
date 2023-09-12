@@ -8,5 +8,7 @@ export default configureStore({
   reducer: {
     dataSlice: dataSlice,
     userRegisterSlice: userRegisterSlice,
+
+
 	}
 })

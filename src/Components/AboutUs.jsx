@@ -1,4 +1,3 @@
-import React from 'react';
 import "../Styles/Aboutus.css";
 import images from './assets/images';
 

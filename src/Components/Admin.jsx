@@ -23,7 +23,7 @@ const Logout=()=>{
         <div className='admin'>
             <section className='panel1'>
                
-                <i class="icon fa-solid fa-user-gear"></i>
+                <i className="icon fa-solid fa-user-gear"></i>
 
                 <h1>Welcome Administrator</h1>
                <button onClick={Logout}><i class="fa-solid fa-arrow-right-from-bracket"></i>  </button>    

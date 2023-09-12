@@ -33,7 +33,7 @@ const  made=()=>{
 setSaw(!saw);
 
 };
-console.log(saw);
+
 
 
     return (

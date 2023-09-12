@@ -10,14 +10,25 @@ import Home from "./Components/Home";
 import Footer from "./Components/Footer";
 import Create from "./Components/Create";
 import ProtectedRoutes from "./Components/ProtectedRoutes";
-import { useSelector } from "react-redux";
+import LoadingScreen from "./Components/LoadingScreen";
+import { useSelector } from "react-redux/es/hooks/useSelector";
+import { useEffect, useState } from "react";
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
+  useEffect(()=> { 
+    window.addEventListener('load', ()=>{
+      setIsLoading(false);
+    })
+  },[])
+const userData = useSelector(state => state.dataSlice)
 
-  const userData = useSelector(state => state.dataSlice)
-  
+
+
+
   return (
     <div className="App">
+       {isLoading? <LoadingScreen/>:<></>}
       <HashRouter>
         <Main />
         <Routes>
