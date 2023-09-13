@@ -81,7 +81,7 @@ flex-direction: column;
 }.profile >img{
     text-align: center;
     width: 100%;
-    background-color: #e69f10;
+   
     position: relative;
     right: 50px;
     border-radius: 50%;

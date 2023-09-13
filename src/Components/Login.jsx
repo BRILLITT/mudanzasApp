@@ -69,8 +69,7 @@ const Login = () => {
         dispatch(changeInfo({ gmail: gmail, password: password }));
         navigate('/Admin')
     }
-
-    //ahora para la navegacion 
+ //ahora para la navegacion 
     const navigate = useNavigate();
 
 

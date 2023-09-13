@@ -3,11 +3,12 @@ import { createSlice } from '@reduxjs/toolkit';
 // Cambiamos mySlice por el nombre de nuestro slice (usersSlice, toDosSlice...)
 export const userRegisterSlice = createSlice({
 		name: 'userRegisterSlice',
-    initialState: {},
+    initialState: [],
     reducers: {
         changeCredentials:(state,action)=>{
             const data = action.payload;
-            return data;
+
+            return [...state,data] ;
         },
         
     }

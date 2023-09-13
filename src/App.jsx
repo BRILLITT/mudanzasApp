@@ -37,9 +37,12 @@ const userData = useSelector(state => state.dataSlice)
           <Route path="/services" element={<Services />} />
           <Route path="/contactus" element={<ContactUs />} />
           <Route path="/create" element={<Create />}></Route>
+         
           <Route path="/customers" element={(userData.name)? <Customers />:<Navigate to='/'/>} /> 
+          
           <Route element={<ProtectedRoutes />}>
             <Route path="/admin" element={<Admin />} />
+
           </Route>
         </Routes>
       
