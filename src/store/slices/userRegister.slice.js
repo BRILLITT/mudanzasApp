@@ -7,10 +7,8 @@ export const userRegisterSlice = createSlice({
     reducers: {
         changeCredentials:(state,action)=>{
             const data = action.payload;
-
             return [...state,data] ;
-        },
-        
+        },        
     }
 })
 

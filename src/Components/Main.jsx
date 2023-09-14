@@ -16,46 +16,35 @@ const Main = () => {
             setLook(false);
         } else {
             setLook(true);
-        }  
-        
+        }      
     },[constLogin]);
 
-
-
     const back=()=>{
-     
         navigate(-1);
     }
+
     const see=()=>{
         setLook(!look);
     }
-const  made=()=>{
-setSaw(!saw);
 
-};
-
-
+    const  made=()=>{
+    setSaw(!saw);
+    };
 
     return (
-
         <div>
-            
             <header className='header1'>
               <Link className="title1" to={"/"}>Home</Link><br/>
               <Link className="title" to={"/aboutus"}>About Us</Link><br/>
               <Link className="title" to={"/services"}>Services</Link><br/>
               <Link  className="title"to={"/contactus"}>Contact Us</Link><br/>
               {constLogin.name ?<></>:<h1>{look?<Login/>:<></>}</h1>}
-             
               {constLogin.name ?<div className='header_datos'>
                 <button className='button' onClick={made}><img className='miniImage' src={constLogin.imageUrl? constLogin.imageUrl: images.incognito} alt="" /></button>
               <br/><h2>Hi {constLogin.name.slice(0,constLogin.name.indexOf(" "))}</h2></div>: <button onClick={see}>Login</button>}
-              
-              {constLogin.name?<div>{saw?<Tools/>:<></>}</div>:<></>}
-              
+              {constLogin.name?<div>{saw?<Tools/>:<></>}</div>:<></>} 
               <button className="header1_button" onClick={back}>Back</button>
             </header>
-         
         </div>
     );
 };

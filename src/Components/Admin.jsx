@@ -26,7 +26,7 @@ const Logout=()=>{
                 <i className="icon fa-solid fa-user-gear"></i>
 
                 <h1>Welcome Administrator</h1>
-               <button onClick={Logout}><i class="fa-solid fa-arrow-right-from-bracket"></i>  </button>    
+               <button onClick={Logout}><i className="fa-solid fa-arrow-right-from-bracket"></i>  </button>    
                 <Link className="lin1" to={"/admin"}>Gestión de Facturas</Link>
                 <Link className="lin1" to={"/admin"}>Credenciales de Usuario</Link>
                 <Link className="lin1" to={"/admin"}>Historial de servicios realizados</Link>

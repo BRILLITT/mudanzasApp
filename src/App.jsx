@@ -16,19 +16,16 @@ import { useEffect, useState } from "react";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
-  useEffect(()=> { 
-    window.addEventListener('load', ()=>{
+  useEffect(() => {
+    window.addEventListener("load", () => {
       setIsLoading(false);
-    })
-  },[])
-const userData = useSelector(state => state.dataSlice)
-
-
-
+    });
+  }, []);
+  const userData = useSelector((state) => state.dataSlice);
 
   return (
     <div className="App">
-       {isLoading? <LoadingScreen/>:<></>}
+      {isLoading ? <LoadingScreen /> : <></>}
       <HashRouter>
         <Main />
         <Routes>
@@ -37,17 +34,16 @@ const userData = useSelector(state => state.dataSlice)
           <Route path="/services" element={<Services />} />
           <Route path="/contactus" element={<ContactUs />} />
           <Route path="/create" element={<Create />}></Route>
-         
-          <Route path="/customers" element={(userData.name)? <Customers />:<Navigate to='/'/>} /> 
-          
+          {/* se puso gmail en lugar de name de manera temporal */}
+          <Route
+            path="/customers"
+            element={userData ? <Customers /> : <Navigate to="/" />}
+          />
           <Route element={<ProtectedRoutes />}>
             <Route path="/admin" element={<Admin />} />
-
           </Route>
         </Routes>
-      
-      {userData.name? <></>:<Footer />} 
-     
+        {userData.name ? <></> : <Footer />}
       </HashRouter>
     </div>
   );
