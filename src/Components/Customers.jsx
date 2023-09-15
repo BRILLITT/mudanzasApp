@@ -6,7 +6,10 @@ import { logout } from '../store/slices/data.slice';
 
 const Customers = () => {
     const usuario = useSelector(state => state.dataSlice)
-    const userRegistered = useSelector(state => state.userRegisterSlice)
+    //lineas 10 y 11 permitiran trabajar con los datos del usuario registrado
+    const registerList = useSelector(state => state.userRegisterSlice)
+    const registeredUser = registerList.find(posi =>(posi.gmail===usuario.gmail));
+    // console.log(registeredUser);
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
@@ -20,9 +23,8 @@ const Customers = () => {
         <div className='users'>
             <section className='panel1'>
                 <div className='profile'>
-                    {(usuario.imageUrl) ? <img className="imguser" src={usuario.imageUrl} alt="" /> : <img className="imguser" src={images.incognito} alt="" />}
-                    {/* ${userRegistered.name.slice(0,(userRegistered.name.indexOf(" ")))} */}
-                    <h1>{usuario.name ? `Welcome ${usuario.name.slice(0,(usuario.name.indexOf(" ")))}` : `Welcome `}</h1> 
+                    {(usuario.email) ? <img className="imguser" src={usuario.imageUrl} alt="" /> : <img className="imguser" src={images.incognito} alt="" />}
+                    <h1>{usuario.name ? `Welcome ${usuario.name.slice(0,(usuario.name.indexOf(" ")))}` : `Welcome  ${registeredUser.name.slice(0,(registeredUser.name.indexOf(" ")))}`}</h1> 
                     <button className="logout" onClick={deleteData}>
                         <i className="icon fa-solid fa-arrow-right-from-bracket"></i>
                     </button>

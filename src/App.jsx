@@ -37,7 +37,7 @@ function App() {
           {/* se puso gmail en lugar de name de manera temporal */}
           <Route
             path="/customers"
-            element={userData ? <Customers /> : <Navigate to="/" />}
+            element={(userData.gmail || userData.email) ? <Customers /> : <Navigate to="/" />}
           />
           <Route element={<ProtectedRoutes />}>
             <Route path="/admin" element={<Admin />} />

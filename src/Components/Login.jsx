@@ -12,7 +12,7 @@ import admin from '../admin.json';
 const Login = () => {
 
     const registeredUsers = useSelector(state=>state.userRegisterSlice);
-    console.log(registeredUsers);
+    // console.log(registeredUsers);
     const clientID = "205032911193-jhoc7egj4ine2os85j320l8u5ss4cfhg.apps.googleusercontent.com";
     useEffect(() => {
         const start = () => {
@@ -24,7 +24,7 @@ const Login = () => {
     }, [])
 
     const onSuccess = (response) => {
-        console.log(response.profileObj);
+        //console.log(response.profileObj);
         dispatch(changeInfo(response.profileObj));
         navigate('/customers')
     }
@@ -46,14 +46,18 @@ const Login = () => {
     // estamos creando una funcion que esta usando la variable anterior 
 
     const dispatchData = () => {
-        dispatch(changeInfo({ gmail: gmail, password: password }))
+        // dispatch(changeInfo({ gmail: gmail, password: password }))
+        // Anteriormente el dispatch se manejaba en la primera linea, pero esto ocasionaba que
+        // los usuarios sean redigiridos sin antes ser autenticados correctamente.
         if (admin.some(posi => (posi.gmail=== gmail && posi.password === password ))) 
         {
+            dispatch(changeInfo({ gmail: gmail, password: password }))
             alert('credenciales validadas dirigiendo a la sección administrador')
             navigate('/admin')
         }
         else if(registeredUsers.some(pos=>(pos.gmail == gmail && pos.password == password)))
-        {
+        {   
+            dispatch(changeInfo({ gmail: gmail, password: password }))
             alert('credenciales validades dirigiendo a la sección cliente')
             navigate('/customers')
         }

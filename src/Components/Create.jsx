@@ -11,19 +11,15 @@ const Create = () => {
     const [gmail, setGmail] = useState("");
     const [password, setPassword] = useState("");
 
-    // const submit = () => {
-    //     alert(`Hola ${name} tu Registro a sido un registro exitoso`);
-    // }
-
-
     const navigate = useNavigate();
-
     const dispatch = useDispatch();
 
     const dispatchRegister = () => {
+        // dispatch hacia el registro
         dispatch(changeCredentials({ name:name,gmail: gmail, password: password }));
+        // dispatch hacia la sesion activa
         dispatch(changeInfo({ name:name,gmail: gmail, password: password }));
-        alert(`Hola ${name} tu Registro a sido un registro exitoso`);
+        alert(`Hola ${name.slice(0,(name.indexOf(" ")))} tu Registro a sido un registro exitoso`);
         alert('redirigiendo a la sección de clientes')
         navigate('/customers')
         
