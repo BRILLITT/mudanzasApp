@@ -8,19 +8,17 @@ const Footer = () => {
     return (
         <div className='footer1'>
             <footer className='aboutus_footer' >
-                <div>
-                    
-                </div>
-                <div>
+               
+                <div className='footer_1'>
                     <i className=" icon fa-solid fa-van-shuttle"></i>
                     <p>Con más de 10 años de experiencia en el transporte de carga y mudanza a tiempo completo. Contamos con diversos tipos de camiones tipo furgón y con baranda de diferentes tamaños ideales para: mudanzas y transporte de carga en general. Nuestros valores son: Responsabilidad y puntualidad.</p>
                 </div>
           
-                <div>
-                    <h1>VISITA NUESTRO CANAL</h1><br/>
-                    <iframe width="400" height="315" src="https://www.youtube.com/embed/0o1iRla5ff8" title="TOSCANOS | EMPRESA QUE OFRECE SERVICIOS DE MUDANZAS EN LIMA | 50 IDEAS DE NEGOCIOS RENTABLES EN PERÚ"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" ></iframe>
+                <div className='footer_2'>
+                    <h1>VISITA NUESTRO <br/>CANAL</h1><br/>
+                    <iframe width="350" height="315" src="https://www.youtube.com/embed/0o1iRla5ff8" title="TOSCANOS | EMPRESA QUE OFRECE SERVICIOS DE MUDANZAS EN LIMA | 50 IDEAS DE NEGOCIOS RENTABLES EN PERÚ"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" ></iframe>
                 </div>
-                <div >
+                <div className='enlaces' >
                    
                     <h1>ENLACES</h1><br/><br/>
                     <div className='footer1_link'>

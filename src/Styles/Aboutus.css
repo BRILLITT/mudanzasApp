@@ -41,6 +41,7 @@
     font-size: 20px;
 
 }
+
 .aboutus_3{
  
   padding: 20px;
@@ -55,10 +56,10 @@
     background-color: #030303 ;
 }.aboutus_3>.aboutus3_content{
     display: flex;
-
     align-items: left;
     text-align: left;
     flex-direction: column;
+    text-align: justify;
     width: 600px;
     height: 600px;
     font-size: 20px;
@@ -84,4 +85,25 @@ color:#e69f10;
     font-size: 25px;
     color: rgb(0, 0, 0);
     
+}@media(max-width:1400px){
+
+    .aboutus_2>.aboutus_2_video1{
+        width: 50px;
+      
+    }.aboutus_3_img{
+        width: 550px;
+        height: 400px;
+       
+}.aboutus_3 div >h1{
+    font-size:8px;
+}.aboutus_3>.aboutus3_content{
+  
+    width: 750px;
+    height: 600px;
+    font-size: 18px;
+    
+
+}.aboutus1_content{
+    left:29%; 
+}
 }

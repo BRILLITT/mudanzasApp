@@ -15,10 +15,6 @@ const Home = () => {
                 <div className='cards'>
                     <div className='home2_card1'>
                         <img className="home2_card1_img" src={images.carga} alt="" />
-                        
-                        <div className='home2_card2_img'></div>
-                        
-                        
                         <div className='home2_card2_content1'>
                             <i className="fa-solid fa-box-archive  icon_card"></i>
                             <p className='home2_card1_title1'> MUDANZAS</p>
