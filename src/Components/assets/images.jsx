@@ -15,6 +15,9 @@ import admin2 from '../assets/admin2.jpg';
 import admin3 from '../assets/admin3.jpg';
 import admin4 from '../assets/admin4.jpg';
 import incognito from '../assets/incognito.png';
+import wraper from "../assets/wraper.jpg";
+import organization from "../assets/organization.jpg";
+import wrappers2 from "../assets/wrappers2.jpg";
 export default {
     "carga": Carga,
     "embalaje": embalaje,
@@ -33,4 +36,7 @@ export default {
     "admin3":admin3,
     "admin4":admin4,
     "incognito":incognito,
+    "wraper":wraper,
+    "wrappers2":wrappers2,
+    "organization":organization
 }

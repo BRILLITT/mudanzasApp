@@ -1,23 +1,24 @@
-import { HashRouter, Routes, Route, Navigate } from "react-router-dom";
-import "./Styles/App.css";
-import Admin from "./Components/Admin";
-import Customers from "./Components/Customers";
-import Main from "./Components/Main";
-import AboutUs from "./Components/AboutUs";
-import Services from "./Components/Services";
-import ContactUs from "./Components/ContactUs";
-import Home from "./Components/Home";
-import Footer from "./Components/Footer";
-import Create from "./Components/Create";
-import ProtectedRoutes from "./Components/ProtectedRoutes";
-import LoadingScreen from "./Components/LoadingScreen";
-import { useSelector } from "react-redux/es/hooks/useSelector";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
+import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
+import './Styles/App.css';
+import Admin from './Components/Admin';
+import Customers from './Components/Customers';
+import Main from './Components/Main';
+import AboutUs from './Components/AboutUs';
+import Services from './Components/Services';
+import ContactUs from './Components/ContactUs';
+import Home from './Components/Home';
+import Footer from './Components/Footer';
+import Create from './Components/Create';
+import ProtectedRoutes from './Components/ProtectedRoutes';
+import LoadingScreen from './Components/LoadingScreen';
+import { useSelector } from 'react-redux/es/hooks/useSelector';
+import ChatBotPage from './Components/ChatBotPage';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
-    window.addEventListener("load", () => {
+    window.addEventListener('load', () => {
       setIsLoading(false);
     });
   }, []);
@@ -44,6 +45,8 @@ function App() {
           </Route>
         </Routes>
         {userData.name ? <></> : <Footer />}
+
+        <ChatBotPage />
       </HashRouter>
     </div>
   );

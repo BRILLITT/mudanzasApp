@@ -18,6 +18,7 @@ const Customers = () => {
         dispatch(logout());
         navigate('/')
     }
+    console.log(usuario.imageUrl);
 
     return (
         <div className='users'>
