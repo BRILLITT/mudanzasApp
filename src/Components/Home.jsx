@@ -2,9 +2,14 @@ import React from 'react';
 import images from "../Components/assets/images";
 import '../Styles/Home.css';
 import Carousel from 'react-bootstrap/Carousel';
-
+import ProgressBar from 'react-bootstrap/ProgressBar';
 import Card from 'react-bootstrap/Card';
 const Home = () => {
+
+  const now = 88;
+  const now1 = 70;
+  const now2 = 80;
+ 
     return (
         <div className='home'>
 
@@ -69,7 +74,15 @@ const Home = () => {
             </section>
             <section className='home_4'>
               <div>
-                <h1>Porque siempre buscamos lo mejor</h1>
+                <h1>Valoración de Nuestros Usuarios</h1><br /><br />
+          <h6><b>Calidad</b><br /> <br /> <ProgressBar  variant="black" now={now} label={`${now}%`} /></h6>  <br /> <br />
+                
+          <h6><b>Honestidad</b><br /> <br /><ProgressBar   variant="black" now={now1} label={`${now1}%`} /></h6><br /> <br />
+                
+          <h6><b>Puntualidad</b><br /> <br /> <ProgressBar  variant="black" now={now2} label={`${now2}%`} /></h6><br /> <br />
+                
+         
+
               </div>
               
        <Carousel  className='secon2' data-bs-theme="dark">
