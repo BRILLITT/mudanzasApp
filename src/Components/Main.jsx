@@ -70,8 +70,8 @@ const Main = () => {
                                             <img className='miniImage' src={constLogin.imageUrl ? constLogin.imageUrl : images.incognito} alt="" />
                                         </button>
                                         <br />
-                                        <h2>
-                                            Hi {
+                                        <h2 className='profile_header_title2'>
+                                          Hi  {
                                                 constLogin.email ?
                                                     (constLogin.name.slice(0, constLogin.name.indexOf(" ")))
                                                     :

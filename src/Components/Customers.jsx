@@ -25,7 +25,7 @@ const Customers = () => {
             <section className='panel1'>
                 <div className='profile'>
                     {(usuario.email) ? <img className="imguser" src={usuario.imageUrl} alt="" /> : <img className="imguser" src={images.incognito} alt="" />}
-                    <h1>{usuario.name ? `Welcome ${usuario.name.slice(0,(usuario.name.indexOf(" ")))}` : `Welcome  ${registeredUser.name.slice(0,(registeredUser.name.indexOf(" ")))}`}</h1> 
+                    <h1 className='profile_user1_title'>{usuario.name ? `Welcome ${usuario.name.slice(0,(usuario.name.indexOf(" ")))}` : `Welcome  ${registeredUser.name.slice(0,(registeredUser.name.indexOf(" ")))}`}</h1> 
                     <button className="logout" onClick={deleteData}>
                         <i className="icon fa-solid fa-arrow-right-from-bracket"></i>
                     </button>

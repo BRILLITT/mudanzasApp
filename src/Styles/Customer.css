@@ -13,7 +13,7 @@
     
     .panel1{
     background-color: rgb(0, 0, 0);
-    width: 14%;
+    width: 18%;
     display: flex;
     align-items: center;
     justify-content:space-evenly;
@@ -24,7 +24,10 @@
     color:aliceblue;
     margin-bottom: solid  white;
     
-    
+    }.profile_user1_title{
+
+    font-size: 30px;
+
     
     }.panel1> .icon{
         font-size: 80px;
