@@ -68,41 +68,42 @@ const Home = () => {
                 </div>
             </section>
             <section className='home_4'>
+              <div>
+                <h1>Porque siempre buscamos lo mejor</h1>
+              </div>
               
-       <Carousel data-bs-theme="dark">
-      <Carousel.Item>
+       <Carousel  className='secon2' data-bs-theme="dark">
+      <Carousel.Item interval={800}>
         <img
           className="d-block"
           src={images.wraper}
           alt="First slide"
         />
         <Carousel.Caption>
-          <h5>First slide label</h5>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          <h5 className='carru1'>Comprometidos con la seguridad</h5>
+         
         </Carousel.Caption>
       </Carousel.Item>
-      <Carousel.Item>
+      <Carousel.Item interval={800}>
         <img
           className="d-block"
-          src={images.wraper}
+          src={images.organization}
           alt="Second slide"
         />
         <Carousel.Caption>
-          <h5>Second slide label</h5>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <h5 className='carru1'>Servicios Cubiertos 100% cubiertos</h5>
+          
         </Carousel.Caption>
       </Carousel.Item>
-      <Carousel.Item>
+      <Carousel.Item interval={800}>
         <img
           className="d-block"
-          src={images.wraper}
+          src={images.wrappers2}
           alt="Third slide"
         />
         <Carousel.Caption>
-          <h5>Third slide label</h5>
-          <p>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-          </p>
+          <h5 className='carru1'>Lo hacemos por ti.</h5>
+         
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>

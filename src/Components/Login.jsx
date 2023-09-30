@@ -81,8 +81,8 @@ const Login = () => {
                         <button type='button' className='eye' onClick={showyou}>{show ? <i className="fa-solid icon fa-eye-slash"></i> : <i className="fa-solid icon fa-eye"></i>}</button>
                     </div><br />
                     <div className='button_login'>
-                        <p><button className='create' >Sign in</button></p>
-                        <Link to={"/create"}><button className='create'>Create Acount</button></Link>
+                        <p><button className='create1' >Sign in</button></p>
+                        <Link to={"/create"}><button className='create2'>Create Acount</button></Link>
                     </div>
                     <GoogleLogin className='google'
                         clientId={clientID}

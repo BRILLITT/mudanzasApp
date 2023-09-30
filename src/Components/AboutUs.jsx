@@ -19,10 +19,10 @@ const AboutUs = () => {
                 </div>
             </section>
             <section className='aboutus_3'>
-                <img className="aboutus_3_img"src={images.team} alt="" />
+                <img  className="aboutus_3_img"src={images.team} alt="" />
                 <div className='aboutus3_content'>
-                    <p>Nuestros pilares<br/>
-                    <h1>MISIÓN, VISIÓN E HISTORIA</h1>
+                <p>Nuestros pilares<br/>
+                    <h1 className="aboutus3_content_title"> MISIÓN, VISIÓN E HISTORIA</h1>
                     </p>
                      <p><span>Visión:</span><br/><i className="fa-solid fa-quote-left icon" ></i> Ser una empresa de transporte de carga y mudanza reconocido en la capital por su eficiencia y fácil acceso que brinda un servicio de calidad.
                      <br/><br/><span>Misión:</span><br/><i className="fa-solid fa-quote-left icon" ></i> Brindar un servicio de carga eficiente y ser la solución para las personas y empresas que busquen transportar sus bienes.

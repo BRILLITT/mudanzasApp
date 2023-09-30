@@ -6,7 +6,7 @@
     width: 100%;
     box-sizing: border-box;
     background-color: rgb(0, 0, 0);
-    height: 800px;
+    height: 600px;
     width: 100%;
 
 }.footer_1_card{
@@ -36,6 +36,14 @@
     width: 10% !important;
     justify-content: center;
 
+ }.enlaces{
+   padding-top: 35PX;
+   text-align: left !important;
+    display: flex;
+   
+    justify-content:left !important;
+    flex-direction: column;
+    align-items:center;
  }
 
 .link{
@@ -75,7 +83,12 @@ border-radius: 50%;
       flex-direction: row;
       font-size: 10px;
       height: 20px;
-    }@media(max-width:1600px){
+    }.footer_2_card2{
+font-size: 30px;
+    }
+    
+    
+    @media(max-width:1600px){
         .aboutus_footer> div{
             font-size: 15px;
            

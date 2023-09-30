@@ -4,6 +4,7 @@
     width: 100%;
     box-sizing: border-box;
     background-color: rgb(0, 0, 0);
+    color: rgb(0, 0, 0) !important;
 
 }.Services_1{
     background-image: url("../Components/assets/Servi.jpg");
@@ -15,13 +16,13 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    color: aliceblue;
+    color: rgb(0, 0, 0) !important;
     text-shadow: 5px 4px 3px black;
     height: 600px;
     width: 100%;
 }.Services_2{
     background-color:#e69f10 ;
-     
+     font-size: 20px;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -31,6 +32,11 @@
 }.Services_2 div>p{
     font-size: 18px;
     text-align: justify;
+    color: rgb(0, 0, 0) !important;
+}.Services_2 div>h2{
+    font-size: 20px !important;
+    text-align: justify;
+    color: rgb(255, 255, 255) !important;
 }
 
 
@@ -45,8 +51,8 @@
     padding: 20px;
     border-left: solid 5px;
 }.Services_2 div >img{
-    width: 400px;
-    height: 300px;
+    width: 300px;
+    height: 250px;
     margin-bottom: 30px;
 }.Services_3{
   position: relative;
@@ -59,16 +65,19 @@
     background-color:#000000;
     color: rgb(255, 255, 255);
    
-}.aboutus3_content{
+}
+.aboutus3_content{
     display: flex;
     justify-content: space-around;
-    width: 100%;
+    width: 100%  !important;
+    
     align-items: center;
     flex-direction: column;
    
-}.aboutus3_content> div{
-    width: 70%;
-   
+}
+.aboutus3_content> div{
+    width: 70% !important;
+  
     text-align: justify;
     height: 350px;
     margin-bottom:40px ;
@@ -76,14 +85,16 @@
     justify-content: space-evenly;
     align-items: center;
     flex-direction: rown;
-}.aboutus3_content div> .icon {
+}
+.aboutus3_content div> .icon {
 font-size: 80px;
 background-color: #e69f10;
 color: #000000;
 padding: 50px;
 margin-right:50px ;
 border-radius: 50%;
-} .aboutus3_content div p> span{
+}
+ .aboutus3_content div p> span{
     font-weight: bolder;
     width: 500px;
     margin-bottom: 10px;
@@ -105,7 +116,16 @@ border-radius: 50%;
     color: aliceblue;
     top: 100px;
 
-}@media(max-width:1400px){
+}.aboutus_4>i{
+    font-size: 25px !important;
+
+}.aboutus_4>h1{
+    font-size: 38px !important;
+
+}
+
+
+@media(max-width:1400px){
     .Services_2 div>p{
         display: flex;
         font-size: 15px;
