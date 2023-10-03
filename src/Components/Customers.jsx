@@ -3,8 +3,12 @@ import { Link, useNavigate } from 'react-router-dom';
 import "../Styles/Customer.css";
 import images from './assets/images';
 import { logout } from '../store/slices/data.slice';
+import { Button } from 'react-bootstrap';
+import { useState } from 'react';
+import Presupuesto from './Presupuesto';
 
 const Customers = () => {
+    const [showPresupuestoValue, setShowPresupuestoValue] = useState(false)
     const usuario = useSelector(state => state.dataSlice)
     //lineas 10 y 11 permitiran trabajar con los datos del usuario registrado
     const registerList = useSelector(state => state.userRegisterSlice)
@@ -20,6 +24,10 @@ const Customers = () => {
     }
     console.log(usuario.imageUrl);
 
+    const showPresupuesto = ()=>{
+        setShowPresupuestoValue(!showPresupuestoValue)
+    }
+
     return (
         <div className='users'>
             <section className='panel1'>
@@ -31,12 +39,15 @@ const Customers = () => {
                     </button>
                     <br /><br />
                 </div>
-                <Link className="lin1" to={"/customer"}>Mis pedidos</Link>
+                 
+                <Button className="lin1" onClick={showPresupuesto}>Haz tu Presupuesto</Button>
                 <Link className="lin1" to={"/customer"}>Seguimiento de servicio</Link>
                 <Link className="lin1" to={"/customer"}>Historial de Servicios realizados</Link>
                 <Link className="lin1" to={"/customer"}>Configuración</Link>
+                
             </section>
             <section className='panel2'>
+                {showPresupuestoValue? <Presupuesto/>:<></>}
                 <div className='galeria'>
                     <div>
                         <p></p>
