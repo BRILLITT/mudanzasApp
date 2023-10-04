@@ -1,46 +1,47 @@
 .Tools{
     display: flex;
-   
-
-    flex-direction: column;
-   
-    position: absolute;
-    z-index: 2000px;
-    top:10%;
-    right: 10.1%;
-    padding-bottom: 40px;
-    width: 19%;
+   flex-direction: column;
+   position: absolute;
+    z-index: 5000px !important;
+    top:22%;
+    left: 91%;
+    
+    width: 10%;
     height: 50px;
    
 
 }.Tools>button{
-    width: 100px;
+    width: 50px;
    text-align: center;
-    text-decoration: none;
-    background-color:#e69f10 ;
-    padding: 10px;
+    text-decoration: none !important;
+    background-color:#757574 ;
+   font-size: 12px;
     color:aliceblue;
 }.Tools>.my{
-    width: 100px;
+    width: 50px;
    text-align: center;
     text-decoration: none;
     color:white;
-    background-color:#e69f10 ;
-    padding: 10px;
+    background-color:#666564 ;
+  
     color:aliceblue;
 }.Tools>.log{
-    width: 100px;
+    width: 50px;
    text-align: center;
     text-decoration: none;
-    background-color:#990c0c ;
-    padding: 10px;
+    background-color:#595959 ;
+   
+    text-decoration: none !important;
     color:aliceblue;
+}.my_to{
+    text-decoration: none !important; 
+    color: aliceblue;
 }
 
 
 .Tools button >Link{
    
-    text-decoration: none;
+    text-decoration: none !important;
     background-color:#e69f10 ;
     padding: 10px;
     color:aliceblue;

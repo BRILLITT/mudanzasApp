@@ -6,26 +6,33 @@ import { logout } from '../store/slices/data.slice';
 import { Button } from 'react-bootstrap';
 import { useState } from 'react';
 import Presupuesto from './Presupuesto';
+import Agend from './Agend';
 
 const Customers = () => {
-    const [showPresupuestoValue, setShowPresupuestoValue] = useState(false)
+    const [showPresupuestoValue, setShowPresupuestoValue] = useState(false);
+    const[showScheduleValue,setShowScheduleValue]=useState(false);
     const usuario = useSelector(state => state.dataSlice)
     //lineas 10 y 11 permitiran trabajar con los datos del usuario registrado
     const registerList = useSelector(state => state.userRegisterSlice)
-    const registeredUser = registerList.find(posi =>(posi.gmail===usuario.gmail));
+    const registeredUser = registerList.find(posi => (posi.gmail === usuario.gmail));
     // console.log(registeredUser);
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
     // cierre de sesión  - elimina los datos de la cuenta logeada en ese momento.
-    const deleteData = ()=> {
+    const deleteData = () => {
         dispatch(logout());
         navigate('/')
     }
     console.log(usuario.imageUrl);
 
-    const showPresupuesto = ()=>{
+    const showPresupuesto = () => {
         setShowPresupuestoValue(!showPresupuestoValue)
+        setShowScheduleValue(false)
+    }
+    const showSchedule = () => {
+        setShowScheduleValue(!showScheduleValue)
+        setShowPresupuestoValue(false)
     }
 
     return (
@@ -33,26 +40,34 @@ const Customers = () => {
             <section className='panel1'>
                 <div className='profile'>
                     {(usuario.email) ? <img className="imguser" src={usuario.imageUrl} alt="" /> : <img className="imguser" src={images.incognito} alt="" />}
-                    <h1 className='profile_user1_title'>{usuario.name ? `Welcome ${usuario.name.slice(0,(usuario.name.indexOf(" ")))}` : `Welcome  ${registeredUser.name.slice(0,(registeredUser.name.indexOf(" ")))}`}</h1> 
+                    <h1 className='profile_user1_title'>{usuario.name ? `Welcome ${usuario.name.slice(0, (usuario.name.indexOf(" ")))}` : `Welcome  ${registeredUser.name.slice(0, (registeredUser.name.indexOf(" ")))}`}</h1>
                     <button className="logout" onClick={deleteData}>
                         <i className="icon fa-solid fa-arrow-right-from-bracket"></i>
                     </button>
                     <br /><br />
-                </div>
-                 
-                <Button className="lin1" onClick={showPresupuesto}>Haz tu Presupuesto</Button>
-                <Link className="lin1" to={"/customer"}>Seguimiento de servicio</Link>
-                <Link className="lin1" to={"/customer"}>Historial de Servicios realizados</Link>
-                <Link className="lin1" to={"/customer"}>Configuración</Link>
-                
-            </section>
-            <section className='panel2'>
-                {showPresupuestoValue? <Presupuesto/>:<></>}
-                <div className='galeria'>
-                    <div>
-                        <p></p>
+                    <div className='profile_button'>
+                       
+                            <Button className="lin5" onClick={showPresupuesto}>Haz tu Presupuesto</Button>
+                           
+                     
+                            <Button className="lin4"onClick={showSchedule}>Programa tu servicio</Button>
+                        
+                        
+                            <Button className="lin4" to={"/customer"}>Historial de Compras</Button>
+                        
+                        <Button className="lin4" to={"/customer"}>Configuración</Button>
+                     
                     </div>
                 </div>
+
+            </section>
+            <section className='panel2'>
+                {showPresupuestoValue ? <Presupuesto /> : <></>}
+
+                {showScheduleValue? <Agend/>  :<></>}
+              
+               
+                
             </section>
         </div>
     );

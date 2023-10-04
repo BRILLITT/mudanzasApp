@@ -65,17 +65,7 @@ margin: 20px;
    
     
     width: 40px;
-}section div >button{
-    border-radius: 50%;
-    margin-right: 30px;
-    width: 20px;
-    height: 2px;
-    text-decoration: none;
-    background-color: black;
-
-    
-
-}section form >button{
+}.createAcount{
 
     text-decoration: none;
     padding: 15px;  
@@ -85,7 +75,7 @@ margin: 20px;
     text-align: center;
     color: #ffffff;
     font-size: 15px;
-}section form >button:hover{
+}.createAcount:hover{
 
     transform: scale(1.1);
 }

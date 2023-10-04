@@ -18,7 +18,7 @@ const Tools = () => {
     }
     return (
         <div className='Tools'>
-            <button className='my'><Link to={"/customers"}>My profile</Link></button>
+            <button className='my'><Link className="my_to" to={"/customers"}>Profile</Link></button>
 
             <button onClick={deleteData} className='log'>Log Out</button>
         </div>
