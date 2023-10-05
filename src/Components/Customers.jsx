@@ -6,7 +6,8 @@ import { logout } from '../store/slices/data.slice';
 import { Button } from 'react-bootstrap';
 import { useState } from 'react';
 import Presupuesto from './Presupuesto';
-import Agend from './Agend';
+
+import Calendar from './Calendar';
 
 const Customers = () => {
     const [showPresupuestoValue, setShowPresupuestoValue] = useState(false);
@@ -64,7 +65,7 @@ const Customers = () => {
             <section className='panel2'>
                 {showPresupuestoValue ? <Presupuesto /> : <></>}
 
-                {showScheduleValue? <Agend/>  :<></>}
+                {showScheduleValue? <Calendar/>  :<></>}
               
                
                 

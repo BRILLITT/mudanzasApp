@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
 import './Styles/App.css';
 import Admin from './Components/Admin';
-import Agend from './Components/Agend';
+
 import Customers from './Components/Customers';
 import Main from './Components/Main';
 import AboutUs from './Components/AboutUs';
@@ -15,6 +15,7 @@ import ProtectedRoutes from './Components/ProtectedRoutes';
 import LoadingScreen from './Components/LoadingScreen';
 import { useSelector } from 'react-redux/es/hooks/useSelector';
 import ChatBotPage from './Components/ChatBotPage';
+
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -36,7 +37,7 @@ function App() {
           <Route path="/services" element={<Services />} />
           <Route path="/contactus" element={<ContactUs />} />
           <Route path="/create" element={<Create />}></Route>
-         <Route path='/Agend' element={<Agend/>}></Route>
+         
           {/* se puso gmail en lugar de name de manera temporal */}
           <Route
             path="/customers"

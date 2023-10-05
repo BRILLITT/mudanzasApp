@@ -1,20 +1,21 @@
 .users{
-   
+   position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: row;
     width: 100%;
-    min-height: 800px ;
-    max-height: 2000px;
+   height: 2000px;
     position: relative;
     color: #000000 !important;
     
     }
     
     .panel1{
-    position: relative !important;
+    position: absolute !important;
     background-color: rgb(0, 0, 0);
+    top: 0 !important;
+    left: 0;
     width: 13%;
     display: flex;
     align-items: center;
@@ -61,12 +62,13 @@
 
     }.profile_button{
         
-        position: relative;
+        position: absolute;
         display: flex;
         justify-content: center;
         flex-direction: column;
-       width: 100% !important;
-       
+       width: 110% !important;
+       left: 0;
+       top: 110%;
         height: 150px;
     }
     .lin5{
@@ -112,6 +114,11 @@
         font-size: 30px;
         font-weight: bolder;
     }.panel2{
+    
+    display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
         background-color: #e69f10;
     width: 100%;
     display: flex;

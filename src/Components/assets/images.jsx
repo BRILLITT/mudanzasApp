@@ -10,6 +10,9 @@ import servi4 from '../assets/servi4.jpg';
 import se2 from '../assets/se2.jpg';
 import se3 from '../assets/se3.jpg';
 import se1 from '../assets/se1.jpg';
+import vip from '../assets/vip.jpg';
+import premium from '../assets/premium.jpg';
+import standar from '../assets/standar.jpg';
 import admin1 from '../assets/admin1.jpg';
 import admin2 from '../assets/admin2.jpg';
 import admin3 from '../assets/admin3.jpg';
@@ -18,6 +21,8 @@ import incognito from '../assets/incognito.png';
 import wraper from "../assets/wraper.jpg";
 import organization from "../assets/organization.jpg";
 import wrappers2 from "../assets/wrappers2.jpg";
+import limpieza from '../assets/limpieza.jpg';
+import montaje from '../assets/montaje.jpg';
 export default {
     "carga": Carga,
     "embalaje": embalaje,
@@ -28,6 +33,12 @@ export default {
     "se2":se2,
     "se3":se3,
     "se1":se1,
+    // nuevos
+    "standar":standar,
+    "vip":vip,
+    "premium":premium,
+    "limpieza":limpieza,
+    "montaje":montaje,
     "servi2":servi2,
     "servi3":servi3,
     "servi4":servi4,
