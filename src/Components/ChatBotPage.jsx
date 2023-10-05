@@ -1,6 +1,7 @@
 // ChatBotPage.jsx
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Button, Offcanvas } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import ChatBot from 'react-simple-chatbot';
 import { ThemeProvider } from 'styled-components';
 
@@ -93,6 +94,7 @@ function ChatBotPage() {
                     {value: "a", label: "Hacen transportes de Lima a otra ciudad?", trigger: "7A"},
                     {value: "b", label: "Cómo puedo obtener un presupuesto?", trigger: "7B"},
                     {value: "c", label: "Mis productos están asegurados?", trigger: "7C"},
+                    {value: "d", label: "mi consulta no está relacionada a las de arriba", trigger: "8"},
                 ]
                 },
                 {
@@ -110,6 +112,20 @@ function ChatBotPage() {
                   message: "Somos una empresa que se preocupa por la seguridad de las pertenencias de nuestros usuarios, por ese motivo, todas las pertenencias de nuestros clientes que se encuentren a nuestro cargo gozarán de un seguro que cubrirá en su totalidad el valor de las pertenencias de las mismas.",
                   trigger: "4B"
                 },
+                {
+                  id: "8",
+                  message: "Lamento no haberte podido ayudar, contacta con nuestro canal de atención whatsapp dando clic abajo",
+                  trigger: "8-redirect"
+                },
+                {
+                  id: "8-redirect",
+                  component: (
+                    <Link to="https://wa.me/51902819629?text=Hola%20estimados%20amigos%20del%20canal%20de%20atencion%20de%20mudanzas,%20tengo%20una%20consulta%20sobre%20su%20servicio.">
+                      <div>Hablar con un asesor...</div>
+                    </Link>
+                  ),
+                  end: true
+                }
               ]}
             />
           </ThemeProvider>

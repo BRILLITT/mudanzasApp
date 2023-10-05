@@ -3,21 +3,22 @@
     width:80% ;
     height: 800px;
     position: absolute;
-    top: 2%;
-    left: 15%;
+    top: 0%;
+    left: 20%;
     display: flex;
+   
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    padding: 20px;
-    background-color: yellow;
+   
+    
     color: black !important;
   }.rojo{
     background-color: rgb(8, 249, 8);
   }.verde{
 background-color: rgb(248, 41, 13);
   }DatePicker{
-    background-color: black !important;
+    background-color: rgb(242, 127, 127) !important;
    scale: 2;
 }
   
@@ -43,8 +44,7 @@ background-color: rgb(248, 41, 13);
   }
   
   .time-selection {
-    
-
+       
    position: absolute;
    top: 35%;
    left:60%;
@@ -55,6 +55,7 @@ background-color: rgb(248, 41, 13);
   
   .time-selection h2 {
     color: black !important;
+    border-radius: 20px;
     font-size: 24px;
     margin-bottom: 10px;
 
@@ -67,7 +68,9 @@ background-color: rgb(248, 41, 13);
     font-size: 16px;
   }
   
-  .save-button {
+  .save-button >button {
+    text-decoration: none !important;
+    color: aliceblue;
  position: absolute;
  top: 50%;
  left: 70%;
@@ -75,37 +78,44 @@ background-color: rgb(248, 41, 13);
     margin-top: 20px;
   }
   
-  button {
+  .save-button> button{
     padding: 10px 20px;
     font-size: 18px;
     background-color: black;
-    color: yellow;
+    color: rgb(68, 72, 70);
     border: none;
+    border-radius: 10px;
     cursor: pointer;
+    color: #ffffff;
   }
   
-  button:hover {
-    background-color: yellow;
-    color: black;
+  .save-button>button:hover {
+    
+    background-color: #f3eb02;
+    color: black ;
+
   }
   
   .selection-summary {
     position: absolute;
-    background-color: black;
-    color: aliceblue;
+    background-color: rgb(0, 0, 0);
+    color: rgb(248, 248, 2);
     top: 60%;
     width: 350px;
     padding: 20px;
     left: 59%;
     margin-top: 20px;
     text-align: center;
+    border-radius: 10px;
   }
   
   .selection-summary h3 {
+    color: rgb(248, 248, 2);
     font-size: 24px;
   }
   
   .selection-summary p {
+    color: rgb(248, 248, 2);
     font-size: 16px;
   }
   
