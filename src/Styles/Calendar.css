@@ -2,9 +2,9 @@
 .calendar-container {
     width:80% ;
     height: 800px;
-    position: absolute;
-    top: 0%;
-    left: 20%;
+    position: relative;
+    background-color: aqua;
+   
     display: flex;
    
     flex-direction: row;
@@ -124,4 +124,11 @@ background-color: rgb(248, 41, 13);
   .time-option.reserved-time {
     background-color: red;
     color: white;
+  }.react-datepicker__day--out-of-month {
+    color: #ccc; /* Color de los días fuera del mes */
+  }
+  
+  .out-of-range {
+    color: #ccc; /* Color de texto para días fuera del rango */
+    pointer-events: none; /* Deshabilitar clics en días fuera del rango */
   }

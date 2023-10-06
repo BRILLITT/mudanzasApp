@@ -3,7 +3,6 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import '../Styles/Calendar.css';
 
-
 const Calendar = () => {
   const [selectedDate, setSelectedDate] = useState(null);
   const [selectedTime, setSelectedTime] = useState('');
@@ -27,18 +26,31 @@ const Calendar = () => {
   };
 
   const handleSave = () => {
+    const presupuestoInfo = JSON.parse(localStorage.getItem('presupuestoInfo'));
+    if (!presupuestoInfo) {
+      alert('Primero realiza un presupuesto antes de seleccionar una fecha y hora.');
+      return;
+    }
+
     if (selectedDate && selectedTime) {
       console.log('Programación realizada con éxito:');
       console.log('Fecha:', selectedDate.toDateString());
       console.log('Hora:', selectedTime);
-      // Agregar el horario seleccionado a los horarios reservados
-      setReservedTimes([...reservedTimes, { date: selectedDate, time: selectedTime }]);
+
+      const reservacion = {
+        ...presupuestoInfo,
+        selectedDate: selectedDate.toDateString(),
+        selectedTime: selectedTime
+      };
+
+      // Agregar el horario seleccionado a los horarios de reservaciones
+      setReservedTimes([...reservedTimes, reservacion]);
+
+      // Guardar la reservación en localStorage
+      localStorage.setItem('reservacion', JSON.stringify(reservacion));
     } else {
       alert('Selecciona una fecha y hora antes de guardar.');
     }
-
-   
-
   };
 
   const isTimeReserved = (time) => {
@@ -59,13 +71,12 @@ const Calendar = () => {
         <h2>Programa Tu Servicio</h2>
         {selectedDate && <p>Fecha seleccionada: {selectedDate.toDateString()}</p>}
         <DatePicker
-       calendarClassName="custom-calendar"
+          calendarClassName="custom-calendar"
           selected={selectedDate}
           onChange={handleDateChange}
           inline
           minDate={new Date()}
           maxDate={new Date().setDate(new Date().getDate() + 30)}
-          
         />
       </div>
       <div className="time-selection">
@@ -96,12 +107,11 @@ const Calendar = () => {
             className={isTimeReserved('6:00 PM').selected ? 'selected-time' : ''}>
             6:00 PM
           </option>
-        </select>
+          </select>
       </div>
       <div className="save-button">
         <button onClick={handleSave} disabled={!selectedDate || !selectedTime}>
           Guardar
-         
         </button>
       </div>
       {selectedDate && selectedTime && (
@@ -116,3 +126,5 @@ const Calendar = () => {
 };
 
 export default Calendar;
+
+

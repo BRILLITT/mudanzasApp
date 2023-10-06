@@ -8,10 +8,12 @@ import { useState } from 'react';
 import Presupuesto from './Presupuesto';
 
 import Calendar from './Calendar';
+import Reservas from './Reservas';
 
 const Customers = () => {
     const [showPresupuestoValue, setShowPresupuestoValue] = useState(false);
     const[showScheduleValue,setShowScheduleValue]=useState(false);
+    const [showReservsValue,setShowReservsValue] =useState(false);
     const usuario = useSelector(state => state.dataSlice)
     //lineas 10 y 11 permitiran trabajar con los datos del usuario registrado
     const registerList = useSelector(state => state.userRegisterSlice)
@@ -36,6 +38,12 @@ const Customers = () => {
         setShowPresupuestoValue(false)
     }
 
+    const showReservs = () => {
+        setShowReservsValue(!showReservsValue)
+        setShowScheduleValue(false)
+        setShowPresupuestoValue(false)
+    }
+
     return (
         <div className='users'>
             <section className='panel1'>
@@ -54,7 +62,7 @@ const Customers = () => {
                             <Button className="lin4"onClick={showSchedule}>Programa tu servicio</Button>
                         
                         
-                            <Button className="lin4" to={"/customer"}>Historial de Compras</Button>
+                            <Button className="lin4" onClick={showReservs}>Reservas en proceso</Button>
                         
                         <Button className="lin4" to={"/customer"}>Configuración</Button>
                      
@@ -66,6 +74,8 @@ const Customers = () => {
                 {showPresupuestoValue ? <Presupuesto /> : <></>}
 
                 {showScheduleValue? <Calendar/>  :<></>}
+
+                {showReservsValue?<Reservas/>:<></> }
               
                
                 
