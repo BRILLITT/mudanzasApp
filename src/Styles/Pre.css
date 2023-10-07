@@ -54,7 +54,7 @@
     left: 4%;
     color: aliceblue !important;
     font-size: 30px ;
-    top:61%;
+    top:59%;
 }.RE_PRE4{
     position:absolute !important;
     top:88%;
@@ -158,7 +158,7 @@
 .Operacion_Presupuesto {
     
     padding-top: 2%;
-    margin-top: 5% !important;
+    margin-top: 10% !important;
     background-color: #000000;
     border-radius: 20px;
     font-size: 15px;

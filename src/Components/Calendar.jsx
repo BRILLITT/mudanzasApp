@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import '../Styles/Calendar.css';
+import Carousel from 'react-bootstrap/Carousel';
+import images from "../Components/assets/images";
 
 const Calendar = () => {
   const [selectedDate, setSelectedDate] = useState(null);
@@ -78,6 +80,40 @@ const Calendar = () => {
 
   return (
     <div className="calendar-container">
+
+<Carousel className='secon_calendar' data-bs-theme="dark">
+  <Carousel.Item interval={850}>
+    <img
+      className="d-block carru-image" // Agrega una clase personalizada para la imagen
+      src={images.wraper}
+      alt="First slide"
+    />
+    <Carousel.Caption>
+      <h5 className='carru1'>Comprometidos con la seguridad</h5>
+    </Carousel.Caption>
+  </Carousel.Item>
+  <Carousel.Item interval={850}>
+    <img
+      className="d-block carru-image" // Agrega una clase personalizada para la imagen
+      src={images.organization}
+      alt="Second slide"
+    />
+    <Carousel.Caption>
+      <h5 className='carru1'>Servicios Cubiertos 100% cubiertos</h5>
+    </Carousel.Caption>
+  </Carousel.Item>
+  <Carousel.Item interval={850}>
+    <img
+      className="d-block carru-image" // Agrega una clase personalizada para la imagen
+      src={images.wrappers2}
+      alt="Third slide"
+    />
+    <Carousel.Caption>
+      <h5 className='carru1'>Lo hacemos por ti.</h5>
+    </Carousel.Caption>
+  </Carousel.Item>
+</Carousel>
+
       <div className="calendar">
         <h2>Programa Tu Servicio</h2>
         {selectedDate && <p>Fecha seleccionada: {selectedDate.toDateString()}</p>}

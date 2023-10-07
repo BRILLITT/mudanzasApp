@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Row, Col, Button } from 'react-bootstrap';
+import "../Styles/EditarPrecios.css" ;
+import Table from 'react-bootstrap/Table';
 
 const EditarPrecios = () => {
   const [nuevosPlanes, setNuevosPlanes] = useState([]);
@@ -201,73 +203,90 @@ const EditarPrecios = () => {
   }
 
   return (
-    <div >
-      <h2 className="text-center">Editar Precios</h2>
-      <Row>
-        <Col sm={12} md={6}>
-          <h3><b>Planes</b></h3>
-          {nuevosPlanes.map((plan, index) => (
+    <div  className='ediciones_services'>
+        <Table striped bordered hover>
+        <thead>
+        <tr>
+          <th colSpan={3}>Edición de Servicios</th>
+         
+         
+        </tr>
+      </thead>
+      <thead>
+        <tr>
+          <th>Tipos de Servicios</th>
+          <th>Vehículos</th>
+          <th>Servicios</th>
+         
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td> {nuevosPlanes.map((plan, index) => (
             <div key={index}>
-              <h4>{plan.name}</h4>
-              <label>Price:</label>
-              <input
+             <td><h4>{plan.name}</h4></td> <br />
+             <td><label>Price:</label></td> <br />
+              <td><input
                 type="number"
                 value={plan.price}
                 onChange={(e) => handlePriceChange(index, e.target.value, nuevosPlanes)}
-              />
-              <label>Description:</label>
-              <textarea
+              /></td> <br />
+              <td><label>Description:</label></td> <br />
+             <td> <textarea
                 value={plan.description}
                 onChange={(e) => handleDescriptionChange(index, e.target.value, nuevosPlanes)}
-              />
+              /></td>
             </div>
           ))}
-        </Col>
-        <Col sm={12} md={6}>
-          <h3><b>Vehículos</b></h3>
-          {nuevosVehiculos.map((vehicle, index) => (
+          </td>
+          <td> {nuevosVehiculos.map((vehicle, index) => (
             <div key={index}>
-              <h4>{vehicle.name}</h4>
-              <label>Price:</label>
-              <input
+             <td><h4>{vehicle.name}</h4></td> <br />
+             <td><label>Price:</label></td> <br />
+              <td> <input
                 type="number"
                 value={vehicle.price}
                 onChange={(e) => handlePriceChange(index, e.target.value, nuevosVehiculos)}
-              />
-              <label>Description:</label>
-              <textarea
+              /></td> <br />
+              <td><label>Description:</label></td> <br />
+             <td>  <textarea
                 value={vehicle.description}
                 onChange={(e) => handleDescriptionChange(index, e.target.value, nuevosVehiculos)}
-              />
+              /></td>
             </div>
-          ))}
-        </Col>
-      </Row>
-      <Row>
-        <Col sm={12} md={6}>
-          <h3><b>Servicios</b></h3>
-          {nuevosServicios.map((service, index) => (
+          ))}</td>
+          <td>  {nuevosServicios.map((service, index) => (
             <div key={index}>
-              <h4>{service.name}</h4>
-              <label>Price:</label>
-              <input
+             <td><h4>{service.name}</h4></td> <br />
+             <td><label>Price:</label></td> <br />
+              <td><input
                 type="number"
                 value={service.price}
                 onChange={(e) => handlePriceChange(index, e.target.value, nuevosServicios)}
-              />
-              <label>Description:</label>
-              <textarea
+              /></td> <br />
+              <td><label>Description:</label></td> <br />
+             <td><textarea
                 value={service.description}
                 onChange={(e) => handleDescriptionChange(index, e.target.value, nuevosServicios)}
-              />
+              /></td>
             </div>
-          ))}
-        </Col>
-      </Row>
-      <div className="text-center">
-        <Button onClick={guardarCambios}>Guardar Cambios</Button>
-        <Button onClick={setearValoresPorDefecto}>Valores por defecto</Button>
-      </div>
+          ))}</td>
+        
+        </tr>
+        
+      </tbody>
+      <tbody>
+        <tr>
+          <td colSpan={2}> <Button onClick={guardarCambios}>Guardar Cambios</Button> </td>
+          <td colSpan={1}> <Button onClick={setearValoresPorDefecto}>Valores por defecto</Button></td>
+          
+        
+        </tr>
+        
+      </tbody>
+    </Table>
+      
+      
     </div>
   );
 };

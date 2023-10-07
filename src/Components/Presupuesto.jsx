@@ -114,8 +114,7 @@ const Presupuesto = () => {
         {
             name: 'Embalaje Especializado',
             price: 100,
-            description: `
-                
+            description: `       
                 Descripción:
                 -Nuestro equipo de expertos cuidará cada uno de tus objetos como si fueran tesoros. 
                 -Ofrecemos un servicio de embalaje especializado que garantiza que tus pertenencias lleguen de manera segura a su destino. 
@@ -333,6 +332,10 @@ const Presupuesto = () => {
                                         </span>
                                     ))}
                                 </Card.Text>
+                                <div className='Precio_servi_adi'>
+                                    <p>Precio:s/100</p>
+
+                                </div>
                                 <div className='add_services2'>
                                     <input className='add_check'
                                         type='checkbox'

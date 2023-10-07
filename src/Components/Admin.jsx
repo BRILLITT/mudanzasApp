@@ -28,10 +28,10 @@ const Admin = () => {
         <div className='admin'>
             <section className='panel1'> 
                 <i className="icon fa-solid fa-user-gear"></i>
-                <h1>Welcome Administrator</h1>
+                <h1 >Welcome <br />Administrator</h1>
                 <button onClick={Logout}><i className="fa-solid fa-arrow-right-from-bracket"></i>  </button>    
                 
-                <Button className="lin1" onClick={showEditarPrecios}>Editar Precios</Button>
+                <Button className="lin1" onClick={showEditarPrecios}>Editar Servicios</Button>
                 <Link className="lin1" to={"/admin"}>Credenciales de Usuario</Link>
                 <Link className="lin1" to={"/admin"}>Historial de servicios realizados</Link>
                 <Link className="lin1" to={"/admin"}>Actualización de Información</Link>
@@ -40,11 +40,7 @@ const Admin = () => {
 
                 {editarPreciosValue? <EditarPrecios/>:<></>}
                 
-                <div className='galeria'>      
-                    <div>
-                        <p></p>
-                    </div>
-                </div>
+               
             </section>
         </div>
     );
