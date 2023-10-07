@@ -94,7 +94,7 @@ function ChatBotPage() {
                     {value: "a", label: "Hacen transportes de Lima a otra ciudad?", trigger: "7A"},
                     {value: "b", label: "Cómo puedo obtener un presupuesto?", trigger: "7B"},
                     {value: "c", label: "Mis productos están asegurados?", trigger: "7C"},
-                    {value: "d", label: "mi consulta no está relacionada a las de arriba", trigger: "8"},
+                    {value: "d", label: "Otras Consultas", trigger: "8"},
                 ]
                 },
                 {
