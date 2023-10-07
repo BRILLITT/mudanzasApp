@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import Table from 'react-bootstrap/Table';
 import "../Styles/Pre.css";
 import images from './assets/images';
 import Card from 'react-bootstrap/Card';
@@ -158,15 +159,15 @@ const Presupuesto = () => {
         const storedPlans = localStorage.getItem('plans');
         const storedVehicles = localStorage.getItem('vehicles');
         const storedServices = localStorage.getItem('services');
-        
+
         if (!storedPlans) {
             localStorage.setItem('plans', JSON.stringify(plans));
         }
-        
+
         if (!storedVehicles) {
             localStorage.setItem('vehicles', JSON.stringify(vehicles));
         }
-        
+
         if (!storedServices) {
             localStorage.setItem('services', JSON.stringify(services));
         }
@@ -228,13 +229,13 @@ const Presupuesto = () => {
             distancia: distancia,
             costoEstimado: totalCost
         };
-    
+
         // Guardar el objeto en el localStorage
         localStorage.setItem('presupuestoInfo', JSON.stringify(infoObj));
-    
+
         setCostoEstimado(totalCost);
 
-    
+
     };
 
     return (
@@ -242,10 +243,10 @@ const Presupuesto = () => {
             <h2 className='RE_PRE1'>Realiza tu presupuesto  </h2> <br /><br /><br /><br />
             <h2 className='RE_PRE2'>Selecciona tu Vehículo : </h2><br /><br /><br />
             <h2 className='RE_PRE3'>Servicios Adicionales: </h2>
-            <h2 className='RE_PRE4'>Calcula tu Presupuesto : </h2>
-           
+
+
             <div className='presupuesto_section1'>
-            <h2 className='RE_PRE0' >Nuestros Servicios : </h2> <br /><br /><br /><br />
+                <h2 className='RE_PRE0' >Nuestros Servicios : </h2> <br /><br /><br /><br />
 
 
                 <div className='presupuestos_cards'>
@@ -350,17 +351,41 @@ const Presupuesto = () => {
             </div> <br /><br />
             <div className='Operacion_Presupuesto'> <br />
 
-                <label className='label_presu'> Distancia (kilómetros):   </label>
-                <input className='label_presu2' placeholder='Precio: s/5 por KM' type="number" value={distancia} onChange={(e) => setDistancia(e.target.value)} /><br />
-                {/* 
-                <label className='label_presu'> Adicional por rutas largas </label>
-                <input type="checkbox" checked={accesoDificil} onChange={() => setAccesoDificil(!accesoDificil)} /><br /> */}
 
-                <button className="Calcular_costo" onClick={calculateCost}>Calcular Costo</button> <br />
-                <br />
-                {costoEstimado !== null && <div>Costo Estimado: S/{costoEstimado}</div>}
-                <br />
-            </div> <br /><br /><br /><br />
+                <Table striped bordered hover>
+                    <thead>
+                        <tr>
+                            <th colSpan={3}>Calcula Tu Presupuesto</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+
+                            <td>  Distancia (kilómetros):</td>
+                            <td><input className='label_presu2' placeholder='Precio: s/5 por KM' type="number" value={distancia} onChange={(e) => setDistancia(e.target.value)} /></td>
+                            
+                        </tr>
+                        <tr>
+
+                        <td colSpan={1}> <button className="Calcular_costo" onClick={calculateCost}>Calcular/Guardar</button> </td>
+                        <td colSpan={2}>Costo Estimado:{costoEstimado !== null && <div>S/{costoEstimado}</div>}</td>
+</tr>
+                       
+                        <tr>
+
+                            <td colSpan={3}>*Puedes realizar tu presupuesto varias veces no te preocupes ,
+                                recuerda que solo se guardara la última selección.</td>
+
+                        </tr>
+                    </tbody>
+                </Table>
+
+
+
+            </div>
+
+            <br /><br /><br /><br />
         </div>
     );
 };

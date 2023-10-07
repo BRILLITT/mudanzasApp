@@ -59,7 +59,7 @@ const Reservas = () => {
           
         </div>
       ) : (
-        <h2>No se verifican reservas previas</h2>
+        <h2 className='titu_reservas_no'>No se verifican reservas previas</h2>
       )}
     </div>
   );

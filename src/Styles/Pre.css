@@ -148,6 +148,9 @@
 }
 
 .Calcular_costo {
+    position: absolute;
+    top: 30%;
+    right: 65%;
     margin-top: 40px;
     text-decoration: none;
     padding: 5px;
@@ -157,17 +160,21 @@
 
 .Operacion_Presupuesto {
     
-    padding-top: 2%;
+    position: absolute;
+    top: 85%;
     margin-top: 10% !important;
     background-color: #000000;
-    border-radius: 20px;
+    border-radius: 5px;
     font-size: 15px;
     color: aliceblue;
     width: 65% !important;
-    height: 200px;
+    height: 250px;
 
 
 
+}.Calcular_costo_pre{
+    color: grey;
+    font-size: 10px;
 }
 
 .services_card2 {
