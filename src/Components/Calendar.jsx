@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import '../Styles/Calendar.css';
@@ -7,13 +7,16 @@ const Calendar = () => {
   const [selectedDate, setSelectedDate] = useState(null);
   const [selectedTime, setSelectedTime] = useState('');
   const [reservedTimes, setReservedTimes] = useState([]);
+  const [texto, setTexto] = useState('Reservando... ')
+  const [saveText, setSaveText] = useState('Confirmar reserva')
 
   useEffect(() => {
-    // Simulación de franjas horarias ya reservadas
-    setReservedTimes([
-      { date: new Date(), time: '10:00 AM' },
-      { date: new Date(), time: '1:00 PM' },
-    ]);
+    const existingReservation = localStorage.getItem('reservacion');
+    if (existingReservation) {
+      alert('Usted ya cuenta con una reservación en proceso, verifique la opción Mis reservas.');
+      setSelectedDate(null); // Esto deselecciona la fecha
+      setSelectedTime('');   // Esto deselecciona la hora
+    }
   }, []);
 
   const handleDateChange = (date) => {
@@ -26,6 +29,11 @@ const Calendar = () => {
   };
 
   const handleSave = () => {
+    const existingReservation = localStorage.getItem('reservacion');
+    if (existingReservation) {
+    alert('Usted ya cuenta con una reservación en proceso, verifique la opción Mis reservas.');
+    return;
+  }
     const presupuestoInfo = JSON.parse(localStorage.getItem('presupuestoInfo'));
     if (!presupuestoInfo) {
       alert('Primero realiza un presupuesto antes de seleccionar una fecha y hora.');
@@ -48,6 +56,9 @@ const Calendar = () => {
 
       // Guardar la reservación en localStorage
       localStorage.setItem('reservacion', JSON.stringify(reservacion));
+      setTexto('Reserva realizada con éxito,  ingresa a Mis reservas para más detalles o cambios')
+      setSaveText('Reserva realizada')
+
     } else {
       alert('Selecciona una fecha y hora antes de guardar.');
     }
@@ -111,14 +122,20 @@ const Calendar = () => {
       </div>
       <div className="save-button">
         <button onClick={handleSave} disabled={!selectedDate || !selectedTime}>
-          Guardar
+          {saveText}
         </button>
       </div>
       {selectedDate && selectedTime && (
         <div className="selection-summary">
-          <h3>Resumen de la selección:</h3>
-          <p>Fecha: {selectedDate.toDateString()}</p>
-          <p>Hora: {selectedTime}</p>
+          <h3>{texto}</h3>
+
+          {localStorage.getItem('reservacion')? (
+            <>
+            </>
+          ):(<>
+            <p>Fecha: {selectedDate.toDateString()}</p>
+            <p>Hora: {selectedTime}</p>
+          </>)}
         </div>
       )}
     </div>

@@ -1,12 +1,11 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import "../Styles/Customer.css";
 import images from './assets/images';
 import { logout } from '../store/slices/data.slice';
 import { Button } from 'react-bootstrap';
 import { useState } from 'react';
 import Presupuesto from './Presupuesto';
-
 import Calendar from './Calendar';
 import Reservas from './Reservas';
 
@@ -32,10 +31,12 @@ const Customers = () => {
     const showPresupuesto = () => {
         setShowPresupuestoValue(!showPresupuestoValue)
         setShowScheduleValue(false)
+        setShowReservsValue(false)
     }
     const showSchedule = () => {
         setShowScheduleValue(!showScheduleValue)
         setShowPresupuestoValue(false)
+        setShowReservsValue(false)
     }
 
     const showReservs = () => {
@@ -62,7 +63,7 @@ const Customers = () => {
                             <Button className="lin4"onClick={showSchedule}>Programa tu servicio</Button>
                         
                         
-                            <Button className="lin4" onClick={showReservs}>Reservas en proceso</Button>
+                            <Button className="lin4" onClick={showReservs}>Mis Reservas</Button>
                         
                         <Button className="lin4" to={"/customer"}>Configuración</Button>
                      

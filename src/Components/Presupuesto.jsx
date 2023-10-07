@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import "../Styles/Pre.css";
 import images from './assets/images';
 import Card from 'react-bootstrap/Card';
@@ -7,7 +7,6 @@ import ListGroup from 'react-bootstrap/ListGroup';
 const Presupuesto = () => {
 
     const [distancia, setDistancia] = useState('');
-    const [accesoDificil, setAccesoDificil] = useState(false);
     const [costoEstimado, setCostoEstimado] = useState(null);
 
     const [selectedPlan, setSelectedPlan] = useState(null);
@@ -154,6 +153,33 @@ const Presupuesto = () => {
         },
     ];
 
+
+    // Verificar si las claves existen en el localStorage
+    useEffect(() => {
+        const storedPlans = localStorage.getItem('plans');
+        const storedVehicles = localStorage.getItem('vehicles');
+        const storedServices = localStorage.getItem('services');
+        
+        if (!storedPlans) {
+            localStorage.setItem('plans', JSON.stringify(plans));
+        }
+        
+        if (!storedVehicles) {
+            localStorage.setItem('vehicles', JSON.stringify(vehicles));
+        }
+        
+        if (!storedServices) {
+            localStorage.setItem('services', JSON.stringify(services));
+        }
+    }, []);
+
+    // Leer los datos desde el localStorage
+    const storedPlans = JSON.parse(localStorage.getItem('plans'));
+    const storedVehicles = JSON.parse(localStorage.getItem('vehicles'));
+    const storedServices = JSON.parse(localStorage.getItem('services'));
+
+
+
     const handlePlanSelect = (plan) => {
         setSelectedPlan(plan);
     };
@@ -224,7 +250,7 @@ const Presupuesto = () => {
 
 
                 <div className='presupuestos_cards'>
-                    {plans.map((plan, index) => (
+                    {storedPlans.map((plan, index) => (
                         <Card key={index} style={{ width: '18rem' }} className='presupuestos_cards1'>
                             <Card.Img variant="top" src={images[plan.name.toLowerCase()]} />
                             <Card.Body>
@@ -262,7 +288,7 @@ const Presupuesto = () => {
                 <br /><br />
                 <div className='Autos'>
 
-                    {vehicles.map((vehicle, index) => (
+                    {storedVehicles.map((vehicle, index) => (
                         <Card key={index} style={{ width: '18rem' }} className='autos_card1'>
                             <Card.Body className='pre'>
                                 <Card.Title className='presu_secti2_title'>{vehicle.name}</Card.Title>
@@ -293,7 +319,7 @@ const Presupuesto = () => {
             <div className='presupuesto_section3'>
 
                 <div className='servicios_adicionales'>
-                    {services.map((service, index) => (
+                    {storedServices.map((service, index) => (
                         <Card key={index} style={{ width: '18rem' }} className='servicios_adicionales_card'>
                             <Card.Img variant="top" src={images[service.name.split(' ')[0].toLowerCase()]} />
 
