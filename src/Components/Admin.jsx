@@ -5,6 +5,7 @@ import { logout } from '../store/slices/data.slice';
 import { Button } from 'react-bootstrap';
 import { useState } from 'react';
 import EditarPrecios from './EditarPrecios';
+import HistorialServicios from './HistorialServicios';
 
 const Admin = () => {
 
@@ -24,6 +25,13 @@ const Admin = () => {
         setEditarPreciosValue(!editarPreciosValue)
     }
 
+    const [historialValue,setHistorialValue]=useState(false);
+    const showHistorial=()=>{
+        setHistorialValue(!historialValue);
+    }
+
+    
+
     return (
         <div className='admin'>
             <section className='panel1'> 
@@ -33,12 +41,14 @@ const Admin = () => {
                 
                 <Button className="lin1" onClick={showEditarPrecios}>Editar Servicios</Button>
                 <Link className="lin1" to={"/admin"}>Credenciales de Usuario</Link>
-                <Link className="lin1" to={"/admin"}>Historial de servicios realizados</Link>
+                <Link className="lin1" onClick={showHistorial}>Historial de servicios realizados</Link>
                 <Link className="lin1" to={"/admin"}>Actualización de Información</Link>
             </section>
             <section className='panel2'>    
 
                 {editarPreciosValue? <EditarPrecios/>:<></>}
+
+                {historialValue? <HistorialServicios/>:<></>}
                 
                
             </section>

@@ -279,7 +279,47 @@ const Presupuesto = () => {
                                 </div>
                             </Card.Body>
                         </Card>
+
+                        
                     ))}
+
+                        <div></div>         
+                        <div></div>     
+                        <div>
+                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+  <input type="hidden" name="cmd" value="_s-xclick" />
+  <input type="hidden" name="hosted_button_id" value="M2UE4Y3N752LL" />
+  <table>
+    <tr>
+      <td>
+        <input type="hidden" name="on0" value="PLANS"/>
+        PLANS
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <select name="os0">
+          <option value="Standar">
+            Standar $200.00 USD
+          </option>
+          <option value="Premium">
+            Premium $250.00 USD
+          </option>
+          <option value="VIP">
+            VIP $300.00 USD
+          </option>
+        </select>
+      </td>
+    </tr>
+  </table>
+  <input type="hidden" name="currency_code" value="USD" />
+  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Buy Now" />
+</form>
+
+</div>  
+<div></div>
+<div></div>    
+
                 </div>
             </div> <br />
             <div></div>

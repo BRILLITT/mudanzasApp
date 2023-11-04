@@ -4,6 +4,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 import '../Styles/Calendar.css';
 import Carousel from 'react-bootstrap/Carousel';
 import images from "../Components/assets/images";
+import { useSelector, useDispatch } from 'react-redux';
 
 const Calendar = () => {
   const [selectedDate, setSelectedDate] = useState(null);
@@ -30,6 +31,9 @@ const Calendar = () => {
     setSelectedTime(event.target.value);
   };
 
+  const usuario = useSelector(state => state.dataSlice);
+
+
   const handleSave = () => {
     const existingReservation = localStorage.getItem('reservacion');
     if (existingReservation) {
@@ -47,14 +51,22 @@ const Calendar = () => {
       console.log('Fecha:', selectedDate.toDateString());
       console.log('Hora:', selectedTime);
 
+
+      //MODIFICADO
       const reservacion = {
+        name: usuario.name,
         ...presupuestoInfo,
         selectedDate: selectedDate.toDateString(),
-        selectedTime: selectedTime
+        selectedTime: selectedTime,
+        
       };
 
+      
+
+
+
       // Agregar el horario seleccionado a los horarios de reservaciones
-      setReservedTimes([...reservedTimes, reservacion]);
+      setReservedTimes([ ...reservedTimes, reservacion]);
 
       // Guardar la reservación en localStorage
       localStorage.setItem('reservacion', JSON.stringify(reservacion));
