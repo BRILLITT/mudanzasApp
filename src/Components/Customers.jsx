@@ -8,11 +8,13 @@ import { useState } from 'react';
 import Presupuesto from './Presupuesto';
 import Calendar from './Calendar';
 import Reservas from './Reservas';
+import Cobertura from './Cobertura';
 
 const Customers = () => {
     const [showPresupuestoValue, setShowPresupuestoValue] = useState(false);
     const[showScheduleValue,setShowScheduleValue]=useState(false);
     const [showReservsValue,setShowReservsValue] =useState(false);
+    const [showCoverValue, setShowCoverValue] = useState(false);
     const usuario = useSelector(state => state.dataSlice)
     //lineas 10 y 11 permitiran trabajar con los datos del usuario registrado
     const registerList = useSelector(state => state.userRegisterSlice)
@@ -32,9 +34,11 @@ const Customers = () => {
         setShowPresupuestoValue(!showPresupuestoValue)
         setShowScheduleValue(false)
         setShowReservsValue(false)
+        setShowCoverValue(false)
     }
     const showSchedule = () => {
         setShowScheduleValue(!showScheduleValue)
+        setShowCoverValue(false)
         setShowPresupuestoValue(false)
         setShowReservsValue(false)
     }
@@ -43,6 +47,13 @@ const Customers = () => {
         setShowReservsValue(!showReservsValue)
         setShowScheduleValue(false)
         setShowPresupuestoValue(false)
+        setShowCoverValue(false)
+    }
+    const showCover = () => {
+        setShowCoverValue(!showCoverValue)
+        setShowScheduleValue(false)
+        setShowPresupuestoValue(false)
+        setShowReservsValue(false)
     }
 
     return (
@@ -65,7 +76,7 @@ const Customers = () => {
                         
                             <Button className="lin4" onClick={showReservs}>Mis Reservas</Button>
                         
-                        <Button className="lin4" to={"/customer"}>Configuración</Button>
+                        <Button className="lin4" onClick={showCover}>Cobertura</Button>
                      
                     </div>
                 </div>
@@ -74,10 +85,10 @@ const Customers = () => {
             <section className='panel2'>
                 {showPresupuestoValue ? <Presupuesto /> : <></>}
 
-                {showScheduleValue? <Calendar/>  :<></>}
+                {showScheduleValue? <Calendar/> :<></>}
 
                 {showReservsValue?<Reservas/>:<></> }
-              
+                {showCoverValue ? <Cobertura/> : <></>}
                
                 
             </section>
