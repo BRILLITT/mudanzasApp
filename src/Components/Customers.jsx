@@ -9,6 +9,7 @@ import Presupuesto from './Presupuesto';
 import Calendar from './Calendar';
 import Reservas from './Reservas';
 import Cobertura from './Cobertura';
+import { Helmet } from 'react-helmet';
 
 const Customers = () => {
     const [showPresupuestoValue, setShowPresupuestoValue] = useState(false);
@@ -77,6 +78,7 @@ const Customers = () => {
                             <Button className="lin4" onClick={showReservs}>Mis Reservas</Button>
                         
                         <Button className="lin4" onClick={showCover}>Cobertura</Button>
+                        
                      
                     </div>
                 </div>
@@ -90,7 +92,21 @@ const Customers = () => {
                 {showReservsValue?<Reservas/>:<></> }
                 {showCoverValue ? <Cobertura/> : <></>}
                
-                
+                <Helmet>
+        <script type="text/javascript">
+          {`
+            var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+            (function(){
+              var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+              s1.async=true;
+              s1.src='https://embed.tawk.to/654f54d5cec6a912820edc49/1heuu6off';
+              s1.charset='UTF-8';
+              s1.setAttribute('crossorigin','*');
+              s0.parentNode.insertBefore(s1,s0);
+            })();
+          `}
+        </script>
+      </Helmet>
             </section>
         </div>
     );

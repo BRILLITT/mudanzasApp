@@ -3,6 +3,7 @@ import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
 import './Styles/App.css';
 import Admin from './Components/Admin';
 
+
 import Customers from './Components/Customers';
 import Main from './Components/Main';
 import AboutUs from './Components/AboutUs';
@@ -211,6 +212,7 @@ const services = [
 
         <ChatBotPage />
       </HashRouter>
+      
     </div>
   );
 }
