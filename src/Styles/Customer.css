@@ -43,7 +43,20 @@
        
        
         width: 100%;
-    }.lin4{
+    }.soporteloro{
+
+position:relative;
+left:-1000;
+top:0%;
+
+    }
+
+
+
+    
+    
+    
+    .lin4{
         top :0;
         text-align: center !important;
            text-decoration: none !important;

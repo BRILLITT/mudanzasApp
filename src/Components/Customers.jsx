@@ -93,7 +93,7 @@ const Customers = () => {
                 {showCoverValue ? <Cobertura/> : <></>}
                
                 <Helmet>
-        <script type="text/javascript">
+        <script className='soporteloro' type="text/javascript">
           {`
             var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
             (function(){

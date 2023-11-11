@@ -116,8 +116,8 @@ right: 120%;
 }.chatBot>button{
 position: fixed;
 width: 60px;
-top:80%;
-right: 0px;
+top:72%;
+right: 20px;
 height: 40px;
 text-decoration: none;
 border-radius: 20px;
