@@ -8,12 +8,15 @@ import ListGroup from 'react-bootstrap/ListGroup';
 const Presupuesto = () => {
 
     const [distancia, setDistancia] = useState('');
+    const [number, setNumber] = useState(null);
     const [costoEstimado, setCostoEstimado] = useState(null);
-
+    const [calleOrigen, setCalleOrigen] = useState(null);
+    const [calleDestino, setCalleDestino] = useState(null);
     const [selectedPlan, setSelectedPlan] = useState(null);
     const [selectedVehicle, setSelectedVehicle] = useState(null);
     const [selectedServices, setSelectedServices] = useState([]);
-
+    const [distritoOrigen, setDistritoOrigen] = useState(null);
+    const [distritoDestino, setDistritoDestino] = useState(null);
     const plans = [
         {
             name: 'STANDAR',
@@ -227,6 +230,11 @@ const Presupuesto = () => {
             selectedVehicle: selectedVehicle?.name,
             selectedServices: selectedServices.map(service => service.name),
             distancia: distancia,
+            distritoDestino: distritoDestino,
+            distritoOrigen: distritoOrigen,
+            calleDestino: calleDestino,
+            calleOrigen: calleOrigen,
+            number:number,
             costoEstimado: totalCost
         };
 
@@ -280,45 +288,10 @@ const Presupuesto = () => {
                             </Card.Body>
                         </Card>
 
-                        
+
                     ))}
 
-                        <div></div>         
-                        <div></div>     
-                        <div>
-                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-  <input type="hidden" name="cmd" value="_s-xclick" />
-  <input type="hidden" name="hosted_button_id" value="M2UE4Y3N752LL" />
-  <table>
-    <tr>
-      <td>
-        <input type="hidden" name="on0" value="PLANS"/>
-        PLANS
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <select name="os0">
-          <option value="Standar">
-            Standar $200.00 USD
-          </option>
-          <option value="Premium">
-            Premium $250.00 USD
-          </option>
-          <option value="VIP">
-            VIP $300.00 USD
-          </option>
-        </select>
-      </td>
-    </tr>
-  </table>
-  <input type="hidden" name="currency_code" value="USD" />
-  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Buy Now" />
-</form>
 
-</div>  
-<div></div>
-<div></div>    
 
                 </div>
             </div> <br />
@@ -402,22 +375,36 @@ const Presupuesto = () => {
                     <tbody>
                         <tr>
 
-                            <td>  Distancia (kilómetros):</td>
-                            <td><input className='label_presu2' placeholder='Precio: s/5 por KM' type="number" value={distancia} onChange={(e) => setDistancia(e.target.value)} /></td>
-                            
+                            <td colSpan={2}>  Distancia (kilómetros):</td>
+                            <td><input className='label_presu3' placeholder='Precio: s/5 por KM' type="number" value={distancia} onChange={(e) => setDistancia(e.target.value)} /></td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td colSpan={2}>Distrito de Origen:<input className='label_presu2' type="text" value={distritoOrigen} onChange={(e) => setDistritoOrigen(e.target.value)} /></td>
+                            <td colSpan={1}>Distrito de Destino:<input className='label_presu2' type="text" value={distritoDestino} onChange={(e) => setDistritoDestino(e.target.value)} /></td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td colSpan={2}>Calle/Número de Origen :<input className='label_presu2' type="text" value={calleOrigen} onChange={(e) => setCalleOrigen(e.target.value)} /></td>
+                            <td colSpan={1}>Calle/Número de Destino :<input className='label_presu2' type="text" value={calleDestino} onChange={(e) => setCalleDestino(e.target.value)} /></td>
+
                         </tr>
                         <tr>
 
-                        <td colSpan={1}> <button className="Calcular_costo" onClick={calculateCost}>Calcular/Guardar</button> </td>
-                        <td colSpan={2}>Costo Estimado:{costoEstimado !== null && <div>S/{costoEstimado}</div>}</td>
-</tr>
-                       
-                        <tr>
-
-                            <td colSpan={3}>*Puedes realizar tu presupuesto varias veces no te preocupes ,
-                                recuerda que solo se guardara la última selección.</td>
+                            <td colSpan={3}>Número de Contacto :<input className='label_presu2' type="number" value={number} onChange={(e) => setNumber(e.target.value)} /></td>
 
                         </tr>
+                        <tr>
+
+                            <td colSpan={1}> <button className="Calcular_costo" onClick={calculateCost}>Calcular/Guardar</button> </td>
+                            <td colSpan={2}>Costo Estimado:{costoEstimado !== null && <div>S/{costoEstimado}</div>}</td>
+                        </tr>
+
                     </tbody>
                 </Table>
 

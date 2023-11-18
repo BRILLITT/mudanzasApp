@@ -16,6 +16,7 @@ const Customers = () => {
     const[showScheduleValue,setShowScheduleValue]=useState(false);
     const [showReservsValue,setShowReservsValue] =useState(false);
     const [showCoverValue, setShowCoverValue] = useState(false);
+
     const usuario = useSelector(state => state.dataSlice)
     //lineas 10 y 11 permitiran trabajar con los datos del usuario registrado
     const registerList = useSelector(state => state.userRegisterSlice)
@@ -36,12 +37,14 @@ const Customers = () => {
         setShowScheduleValue(false)
         setShowReservsValue(false)
         setShowCoverValue(false)
+        setShowSoporte(false)
     }
     const showSchedule = () => {
         setShowScheduleValue(!showScheduleValue)
         setShowCoverValue(false)
         setShowPresupuestoValue(false)
         setShowReservsValue(false)
+        setShowSoporte(false)
     }
 
     const showReservs = () => {
@@ -49,13 +52,17 @@ const Customers = () => {
         setShowScheduleValue(false)
         setShowPresupuestoValue(false)
         setShowCoverValue(false)
+        setShowSoporte(false)
     }
     const showCover = () => {
         setShowCoverValue(!showCoverValue)
         setShowScheduleValue(false)
         setShowPresupuestoValue(false)
         setShowReservsValue(false)
+        setShowSoporte(false)
     }
+
+  
 
     return (
         <div className='users'>
@@ -78,6 +85,7 @@ const Customers = () => {
                             <Button className="lin4" onClick={showReservs}>Mis Reservas</Button>
                         
                         <Button className="lin4" onClick={showCover}>Cobertura</Button>
+                     
                         
                      
                     </div>
@@ -90,7 +98,9 @@ const Customers = () => {
                 {showScheduleValue? <Calendar/> :<></>}
 
                 {showReservsValue?<Reservas/>:<></> }
+
                 {showCoverValue ? <Cobertura/> : <></>}
+
                
                 <Helmet>
         <script className='soporteloro' type="text/javascript">
@@ -106,7 +116,8 @@ const Customers = () => {
             })();
           `}
         </script>
-      </Helmet>
+      </Helmet> 
+              
             </section>
         </div>
     );

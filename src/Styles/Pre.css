@@ -149,8 +149,8 @@
 
 .Calcular_costo {
     position: absolute;
-    top: 30%;
-    right: 65%;
+    top: 73%;
+    right: 60%;
     margin-top: 40px;
     text-decoration: none;
     padding: 5px;
@@ -169,7 +169,7 @@
     color: aliceblue;
     width: 65% !important;
     height: 250px;
-    left: -2px;
+    left: 125px;
 
 
 
@@ -318,4 +318,10 @@
 }.label_presu2{
     position: relative;
     left: 20px;
+    width: 100px;
+}
+.label_presu3{
+    position: relative;
+    left: 20px;
+    width: 150px;
 }
