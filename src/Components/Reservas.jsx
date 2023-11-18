@@ -35,7 +35,8 @@ const Reservas = () => {
           <th>Plan Elegido:</th>
           <th>Vehículo seleccionado:</th>
           <th>Servicios Adicionales:</th>
-          <th>Dirección de destino:</th>
+          <th>Dirección Destino:</th>
+          <th>Referencia:</th>
           <th>Teléfono de Contacto:</th>
           <th>Distancia (kilómetros):</th>
           <th>Costo estimado:</th>
@@ -53,6 +54,7 @@ const Reservas = () => {
           <td>{reservacion.selectedVehicle}</td>
           <td>{reservacion.selectedServices.join(', ')}</td>
           <td>{reservacion.distritoDestino} {reservacion.calleDestino}</td>
+          <td>{reservacion.referencia}</td>
           <td>{reservacion.number}</td>
           <td>{reservacion.distancia}</td>
           <td>{reservacion.costoEstimado}</td>

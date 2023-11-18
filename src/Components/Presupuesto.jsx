@@ -14,6 +14,7 @@ const Presupuesto = () => {
     const [calleDestino, setCalleDestino] = useState(null);
     const [selectedPlan, setSelectedPlan] = useState(null);
     const [selectedVehicle, setSelectedVehicle] = useState(null);
+    const [referencia, setReferencia] = useState(null);
     const [selectedServices, setSelectedServices] = useState([]);
     const [distritoOrigen, setDistritoOrigen] = useState(null);
     const [distritoDestino, setDistritoDestino] = useState(null);
@@ -234,6 +235,7 @@ const Presupuesto = () => {
             distritoOrigen: distritoOrigen,
             calleDestino: calleDestino,
             calleOrigen: calleOrigen,
+            referencia:referencia,
             number:number,
             costoEstimado: totalCost
         };
@@ -374,8 +376,12 @@ const Presupuesto = () => {
                     </thead>
                     <tbody>
                         <tr>
+                    
+                            <td colSpan={2}>  Distancia (kilómetros): 
+                            <a  href="https://www.google.com/maps/dir///@-12.0274764,-77.0527169,17z/data=!3m1!5s0x9105cf27224fb47f:0xd5783640529e2313?entry=ttu" target='_blank'> Calcula tu distancia </a>
+                           
 
-                            <td colSpan={2}>  Distancia (kilómetros):</td>
+                            </td>
                             <td><input className='label_presu3' placeholder='Precio: s/5 por KM' type="number" value={distancia} onChange={(e) => setDistancia(e.target.value)} /></td>
 
                         </tr>
@@ -396,8 +402,8 @@ const Presupuesto = () => {
                         </tr>
                         <tr>
 
-                            <td colSpan={3}>Número de Contacto :<input className='label_presu2' type="number" value={number} onChange={(e) => setNumber(e.target.value)} /></td>
-
+                            <td colSpan={2}>Número de Contacto :<input className='label_presu2' type="number" value={number} onChange={(e) => setNumber(e.target.value)} /></td>
+                            <td colSpan={1}>Referencia del destino:<input className='label_presu2' type="text" value={referencia} onChange={(e) => setReferencia(e.target.value)} /></td>
                         </tr>
                         <tr>
 

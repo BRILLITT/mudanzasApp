@@ -179,7 +179,7 @@ flex-direction: column;
 }.logout{
     
     text-decoration: none;
-    background-color: #000000;
+    
     color:#e69f10;
   
  position: relative !important;
@@ -188,4 +188,12 @@ flex-direction: column;
     text-align: center;
    
 
+}.titulooo{
+
+    position:fixed;
+    color: #000000;
+    font-weight: bolder;
+    right: 0;
+    top: 97%;
+    font-size: 14px;
 }
