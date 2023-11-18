@@ -410,6 +410,12 @@ const Presupuesto = () => {
                             <td colSpan={1}> <button className="Calcular_costo" onClick={calculateCost}>Calcular/Guardar</button> </td>
                             <td colSpan={2}>Costo Estimado:{costoEstimado !== null && <div>S/{costoEstimado}</div>}</td>
                         </tr>
+                        <tr>
+
+                            <td colSpan={3}> *La distancia calculada debe ser igual a la primera opción que le aprece en el google maps
+                            de detectar el ingreso errado del calculo del kilometraje se le realizará el cobro adicional correspondiente*</td>
+                           
+                        </tr>
 
                     </tbody>
                 </Table>

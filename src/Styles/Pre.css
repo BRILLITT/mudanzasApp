@@ -149,7 +149,7 @@
 
 .Calcular_costo {
     position: absolute;
-    top: 73%;
+    top: 55%;
     right: 60%;
     margin-top: 40px;
     text-decoration: none;
@@ -165,7 +165,7 @@
     margin-top: 10% !important;
     background-color: #000000;
     border-radius: 5px;
-    font-size: 15px;
+    font-size: 10px;
     color: aliceblue;
     width: 65% !important;
     height: 250px;

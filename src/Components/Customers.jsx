@@ -122,7 +122,7 @@ const Customers = () => {
 
        
       </Helmet> 
-      <h1 className='titulooo'>Contacta al Conductor</h1>
+      <h1 className='titulooo'>Comunicate y Rastrea tu pedido </h1>
             </section>
         </div>
     );

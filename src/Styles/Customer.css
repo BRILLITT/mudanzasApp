@@ -192,8 +192,8 @@ flex-direction: column;
 
     position:fixed;
     color: #000000;
-    font-weight: bolder;
     right: 0;
     top: 97%;
-    font-size: 14px;
+    font-size: 12px;
+    font-weight: bolder;
 }
