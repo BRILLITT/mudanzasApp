@@ -13,6 +13,7 @@
     color: black;
 }
 
+
 .presupuestos_cards {
     display: flex;
     justify-content: space-evenly;
@@ -20,6 +21,8 @@
     flex-direction: row;
 
 
+}.disance{
+    font-size: 10px;
 }
 
 .presupuesto>h2 {
@@ -30,7 +33,7 @@
     position:absolute !important;
     color: aliceblue !important;
     font-size: 30px ;
-    top:38%;
+    top:36%;
     left: 33%;
     
 }.RE_PRE0{
@@ -43,18 +46,18 @@
     left: 10%;
 }.RE_PRE2{
     position:absolute !important;
-    top:50%;
+    top:38%;
     position:absolute !important;
     color: aliceblue !important;
     font-size: 30px ;
-    top:40%;
+   
     left: 4%;
 }.RE_PRE3{
     position:absolute !important;
     left: 4%;
     color: aliceblue !important;
     font-size: 30px ;
-    top:59%;
+    top:55%;
 }.RE_PRE4{
     position:absolute !important;
     top:88%;
@@ -143,15 +146,20 @@
 }
 
 .servicios_adicionales_card {
+    position: relative;
+    top: 78px;
     margin: 20px;
     font-size: 10px;
 }
 
 .Calcular_costo {
-    position: absolute;
-    top: 55%;
-    right: 60%;
-    margin-top: 40px;
+   
+    text-decoration: none;
+    padding: 5px;
+    background-color: #e69f10;
+    color: aliceblue;
+}.DistanceCalcu{
+    
     text-decoration: none;
     padding: 5px;
     background-color: #e69f10;
@@ -161,7 +169,7 @@
 .Operacion_Presupuesto {
     
     position: absolute;
-    top: 85%;
+    top: 77%;
     margin-top: 10% !important;
     background-color: #000000;
     border-radius: 5px;
@@ -246,7 +254,7 @@
     height: 1000px !important;
 
     margin-bottom: 2%;
-    padding-top: 8%;
+    padding-top: 0%;
 
 }
 

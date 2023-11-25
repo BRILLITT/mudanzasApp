@@ -1,11 +1,53 @@
 import { useEffect, useState } from 'react';
+import AutocompleteInput from './AutocompleteInput';
 import Table from 'react-bootstrap/Table';
 import "../Styles/Pre.css";
 import images from './assets/images';
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 
+
 const Presupuesto = () => {
+    const [directions, setDirections] = useState({
+        origin: '',
+        destination: ''
+    });
+
+    const [distance, setDistance] = useState(0);
+
+    const handleSelect = (address, type) => {
+        setDirections(prevState => ({
+            ...prevState,
+            [type]: address
+        }));
+    };
+
+    const handleCalculateDistance = () => {
+        if (directions.origin && directions.destination) {
+            // Realiza la lógica de cálculo de distancia aquí
+            // Puedes utilizar la API de Google Maps Distance Matrix o Directions
+            // Ejemplo (suponiendo que ya hayas cargado la API de Google Maps):
+            const service = new window.google.maps.DistanceMatrixService();
+
+            service.getDistanceMatrix({
+                origins: [directions.origin],
+                destinations: [directions.destination],
+                travelMode: 'DRIVING',
+            }, (response, status) => {
+                if (status === 'OK') {
+                    console.log('Distancia:', response.rows[0].elements[0].distance.text);
+                    setDistance(response.rows[0].elements[0].distance.text);
+                } else {
+                    console.error('Error al calcular la distancia:', status);
+                }
+            });
+        } else {
+            console.log('Aún no has ingresado las direcciones');
+        }
+    };
+
+
+
 
     const [distancia, setDistancia] = useState('');
     const [number, setNumber] = useState(null);
@@ -235,8 +277,8 @@ const Presupuesto = () => {
             distritoOrigen: distritoOrigen,
             calleDestino: calleDestino,
             calleOrigen: calleOrigen,
-            referencia:referencia,
-            number:number,
+            referencia: referencia,
+            number: number,
             costoEstimado: totalCost
         };
 
@@ -376,34 +418,51 @@ const Presupuesto = () => {
                     </thead>
                     <tbody>
                         <tr>
+
+                            <td colSpan={2}>  Distancia (kilómetros):
+                               
+
+
                     
-                            <td colSpan={2}>  Distancia (kilómetros): 
-                            <a  href="https://www.google.com/maps/dir///@-12.0274764,-77.0527169,17z/data=!3m1!5s0x9105cf27224fb47f:0xd5783640529e2313?entry=ttu" target='_blank'> Calcula tu distancia </a>
-                           
 
                             </td>
                             <td><input className='label_presu3' placeholder='Precio: s/5 por KM' type="number" value={distancia} onChange={(e) => setDistancia(e.target.value)} /></td>
 
                         </tr>
+                        <tr>
 
+                            <td colSpan={2}>Distrito de Origen:<AutocompleteInput
+                                onSelect={(address) => handleSelect(address, 'origin')}
+                            /></td>
+                            <td colSpan={1}>Distrito de Destino: <AutocompleteInput
+                                onSelect={(address) => handleSelect(address, 'destination')}
+                            /></td>
+
+                        </tr>
+                        <tr>
+
+<td colSpan={2}>  <button className='DistanceCalcu' onClick={handleCalculateDistance}>Calcular Distancia</button></td>
+<td colSpan={1}>Distancia Total (Kilometros):  <h5> {distance}</h5></td>
+
+</tr>
 
                         <tr>
 
-                            <td colSpan={2}>Distrito de Origen:<input className='label_presu2' type="text" value={distritoOrigen} onChange={(e) => setDistritoOrigen(e.target.value)} /></td>
-                            <td colSpan={1}>Distrito de Destino:<input className='label_presu2' type="text" value={distritoDestino} onChange={(e) => setDistritoDestino(e.target.value)} /></td>
+                            <td colSpan={2}>Distrito de Origen:<br/><input className='label_presu2' type="text" value={distritoOrigen} onChange={(e) => setDistritoOrigen(e.target.value)} /></td>
+                            <td colSpan={1}>Distrito de Destino:<br/><input className='label_presu2' type="text" value={distritoDestino} onChange={(e) => setDistritoDestino(e.target.value)} /></td>
 
                         </tr>
 
                         <tr>
 
-                            <td colSpan={2}>Calle/Número de Origen :<input className='label_presu2' type="text" value={calleOrigen} onChange={(e) => setCalleOrigen(e.target.value)} /></td>
-                            <td colSpan={1}>Calle/Número de Destino :<input className='label_presu2' type="text" value={calleDestino} onChange={(e) => setCalleDestino(e.target.value)} /></td>
+                            <td colSpan={2}>Calle/Número de Origen :<br/><input className='label_presu2' type="text" value={calleOrigen} onChange={(e) => setCalleOrigen(e.target.value)} /></td>
+                            <td colSpan={1}>Calle/Número de Destino :<br/><input className='label_presu2' type="text" value={calleDestino} onChange={(e) => setCalleDestino(e.target.value)} /></td>
 
                         </tr>
                         <tr>
 
-                            <td colSpan={2}>Número de Contacto :<input className='label_presu2' type="number" value={number} onChange={(e) => setNumber(e.target.value)} /></td>
-                            <td colSpan={1}>Referencia del destino:<input className='label_presu2' type="text" value={referencia} onChange={(e) => setReferencia(e.target.value)} /></td>
+                            <td colSpan={2}>Número de Contacto :<br/><input className='label_presu2' type="number" value={number} onChange={(e) => setNumber(e.target.value)} /></td>
+                            <td colSpan={1}>Referencia del destino:<br/><input className='label_presu2' type="text" value={referencia} onChange={(e) => setReferencia(e.target.value)} /></td>
                         </tr>
                         <tr>
 
@@ -413,8 +472,8 @@ const Presupuesto = () => {
                         <tr>
 
                             <td colSpan={3}> *La distancia calculada debe ser igual a la primera opción que le aprece en el google maps
-                            de detectar el ingreso errado del calculo del kilometraje se le realizará el cobro adicional correspondiente*</td>
-                           
+                                de detectar el ingreso errado del calculo del kilometraje se le realizará el cobro adicional correspondiente*</td>
+
                         </tr>
 
                     </tbody>
